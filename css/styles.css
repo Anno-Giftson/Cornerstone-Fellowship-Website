@@ -45,7 +45,7 @@ body{
   justify-content:space-between;
 }
 #site-logo{
-  height:56px;
+  height:90px;
   width:auto;
   display:block;
   transition:transform .35s var(--ease);
