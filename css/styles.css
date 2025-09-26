@@ -1,5 +1,6 @@
 :root{
   --bg: #ffffff;
+  --bg-rgb: 255,255,255;   /* used by overlay gradient */
   --muted: #6b7280;
   --accent: #0b3b66;
   --accent-2: #c69a3a;
@@ -7,6 +8,8 @@
   --max-width: 1100px;
   --radius: 12px;
   --ease: cubic-bezier(.2,.9,.2,1);
+  --header-height: 120px;   /* fallback; updated dynamically via JS */
+  --fade-height: 120px;     /* fallback; updated dynamically via JS */
 }
 
 *{box-sizing:border-box}
@@ -19,9 +22,26 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.55;
+  position:relative;
 }
 
-/* container */
+/* fixed fade overlay (sits below header, above content) */
+body::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: calc(var(--header-height));
+  height: var(--fade-height);
+  pointer-events: none;
+  z-index: 999; /* less than header (header will be 1000) */
+  /* gradient from page bg (opaque) down to transparent */
+  background: linear-gradient(to bottom, rgba(var(--bg-rgb),1) 0%, rgba(var(--bg-rgb),0) 100%);
+  transition: top 200ms ease, height 200ms ease;
+  will-change: top, height;
+}
+
+/* layout container */
 .container{
   width:calc(100% - 40px);
   max-width:var(--max-width);
@@ -31,12 +51,12 @@ body{
 
 /* header */
 .site-header{
-  background: #ffffff; /* solid background */
+  background: var(--bg);
   border-bottom: 1px solid rgba(15,23,36,0.08);
   position: sticky;
   top: 0;
-  z-index: 40;
-  backdrop-filter: none; /* no blur */
+  z-index: 1000; /* higher than overlay so header covers it */
+  backdrop-filter: none;
 }
 .header-inner{
   display:flex;
@@ -143,26 +163,21 @@ body{
   font-size:.95rem;
 }
 
-/* smooth fade for content under header */
-.site-main {
-  /* fade top content smoothly over 120px (logo height) */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 120px);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 120px);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
-}
-
 /* responsive */
 @media (max-width:900px){
   #site-logo{height:90px !important}
   .info-grid{grid-template-columns:1fr}
   .nav-toggle{display:inline-block}
-  .nav-list{position:absolute; right:0; top:64px; background:white; border:1px solid rgba(12,18,30,0.04); padding:10px; border-radius:10px; flex-direction:column; display:none; min-width:180px}
+  .nav-list{position:absolute; right:0; top:64px; background:var(--bg); border:1px solid rgba(12,18,30,0.04); padding:10px; border-radius:10px; flex-direction:column; display:none; min-width:180px}
   .nav-list.show{display:flex}
   .header-inner{padding:12px 0}
+  /* adjust overlay for mobile: smaller fade area */
+  body::before{
+    top: calc(var(--header-height));
+    height: calc(var(--fade-height) * 0.7);
+  }
 }
+
 
 
 
