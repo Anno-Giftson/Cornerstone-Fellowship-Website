@@ -11,20 +11,29 @@ if (navToggle) {
   });
 }
 
-// Hide content while scrolling
-let scrollTimer;
-const siteMain = document.querySelector('.site-main');
+// Dynamically set header height and fade height for the overlay
+function updateHeaderFade() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
 
-window.addEventListener('scroll', () => {
-  // hide main content while scrolling
-  siteMain.classList.add('hide-content');
+  // header height in px
+  const headerHeight = header.offsetHeight;
 
-  // reset timer
-  clearTimeout(scrollTimer);
+  // set header height CSS var
+  document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
 
-  // show content again after scrolling stops
-  scrollTimer = setTimeout(() => {
-    siteMain.classList.remove('hide-content');
-  }, 200); // 200ms delay
+  // choose fade height (how tall fade strip should be). 
+  // We set it roughly equal to the headerHeight (so content fades out before reaching header)
+  const fadeHeight = Math.max(60, headerHeight); // minimum 60px for small headers
+  document.documentElement.style.setProperty('--fade-height', fadeHeight + 'px');
+}
+
+// Run on load and resize (debounced)
+window.addEventListener('load', updateHeaderFade);
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(updateHeaderFade, 120);
 });
+
 
