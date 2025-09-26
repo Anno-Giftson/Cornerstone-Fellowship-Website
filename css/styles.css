@@ -31,11 +31,12 @@ body{
 
 /* header */
 .site-header{
-  background:#fff;
-  border-bottom:1px solid rgba(15,23,36,0.08);
-  position:sticky;
-  top:0;
-  z-index:40;
+  background: #ffffff; /* solid background */
+  border-bottom: 1px solid rgba(15,23,36,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: none; /* remove blur */
 }
 .header-inner{
   display:flex;
@@ -142,16 +143,6 @@ body{
   font-size:.95rem;
 }
 
-/* hide content while scrolling */
-.site-main {
-  transition: opacity 0.3s ease;
-  opacity: 1;
-}
-.site-main.hide-content {
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* responsive */
 @media (max-width:900px){
   #site-logo{height:90px !important}
@@ -161,6 +152,7 @@ body{
   .nav-list.show{display:flex}
   .header-inner{padding:12px 0}
 }
+
 
 
 
