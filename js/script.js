@@ -8,14 +8,13 @@ navToggle.addEventListener('click', () => {
 // Dynamic fade overlay
 const fadeOverlay = document.getElementById('fade-overlay');
 const infoStrip = document.querySelector('.info-strip');
-const hero = document.querySelector('.hero');
 
 window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY + window.innerHeight / 2;
+  const scrollTop = window.scrollY; // current scroll from top
   const infoBottom = infoStrip.offsetTop + infoStrip.offsetHeight;
 
-  // hide overlay after info-strip
-  if(scrollPos > infoBottom){
+  // Hide overlay when top of viewport passes info-strip
+  if (scrollTop >= infoBottom) {
     fadeOverlay.style.opacity = 0;
   } else {
     fadeOverlay.style.opacity = 1;
@@ -24,6 +23,7 @@ window.addEventListener('scroll', () => {
 
 // Set year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
 
 
 
