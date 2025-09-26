@@ -45,8 +45,8 @@ body{
   justify-content:space-between;
 }
 #site-logo{
-  height:100px;
-  width:auto;
+  height:90px !important;   /* bigger logo */
+  width:auto !important;
   display:block;
   transition:transform .35s var(--ease);
 }
@@ -155,6 +155,9 @@ body{
 
 /* small screens */
 @media (max-width:900px){
+  #site-logo{
+    height:70px !important; /* smaller on mobile */
+  }
   .info-grid{grid-template-columns:1fr}
   .nav-toggle{display:inline-block}
   .nav-list{position:absolute; right:0; top:64px; background:white; border:1px solid rgba(12,18,30,0.04); padding:10px; border-radius:10px; flex-direction:column; display:none; min-width:180px}
@@ -166,3 +169,4 @@ body{
 @keyframes fadeUp{
   to{opacity:1; transform:translateY(0)}
 }
+
