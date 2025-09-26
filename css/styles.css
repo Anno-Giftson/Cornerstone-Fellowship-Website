@@ -1,6 +1,5 @@
 :root{
   --bg: #ffffff;
-  --bg-rgb: 255,255,255;
   --muted: #6b7280;
   --accent: #0b3b66;
   --accent-2: #c69a3a;
@@ -9,7 +8,6 @@
   --radius: 12px;
   --ease: cubic-bezier(.2,.9,.2,1);
   --header-height: 120px;
-  --fade-height: 120px;
 }
 
 *{box-sizing:border-box}
@@ -22,19 +20,6 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   line-height:1.55;
-}
-
-/* fade overlay */
-#fade-overlay {
-  position: fixed;
-  top: var(--header-height);
-  left: 0;
-  right: 0;
-  height: var(--fade-height);
-  pointer-events: none;
-  z-index: 999;
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  transition: opacity 0.3s ease;
 }
 
 /* container */
@@ -63,7 +48,6 @@ body{
 #site-logo{
   height:120px !important;
   width:auto !important;
-  max-height:none !important;
   display:block;
   transition:transform .35s var(--ease);
 }
@@ -106,7 +90,6 @@ body{
 /* hero */
 .hero{
   padding:80px 0;
-  background:linear-gradient(180deg, rgba(11,59,102,0.02), rgba(198,154,58,0.01));
 }
 .hero-inner{max-width:900px}
 .hero-title{
@@ -199,6 +182,7 @@ body{
   .nav-list.show{display:flex}
   .header-inner{padding:12px 0}
 }
+
 
 
 
