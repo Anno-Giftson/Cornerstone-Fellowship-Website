@@ -3,12 +3,53 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cornerstone Delaware Tamil Prayer Fellowship — Welcome</title>
+  <title>Cornerstone Delaware Tamil Prayer Fellowship</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Subtitles */
+    .subtitle-large{
+      font-family:"Montserrat",sans-serif;
+      font-size:1.6rem;
+      color: #2c3e50;
+      margin-top:40px;
+      margin-bottom:16px;
+    }
+
+    .subtitle-large-content{
+      font-size:1.15rem;
+      line-height:1.65;
+      color:#1f2937;
+      margin-bottom:24px;
+    }
+
+    .subtitle{
+      font-family:"Montserrat",sans-serif;
+      font-size:1.3rem;
+      color: #2c3e50;
+      margin-top:32px;
+      margin-bottom:12px;
+    }
+
+    .subtitle + p, .subtitle + ul{
+      font-size:1rem;
+      line-height:1.6;
+      color:#1f2937;
+      margin-bottom:16px;
+    }
+
+    ul{
+      padding-left:20px;
+      margin-bottom:24px;
+    }
+
+    .hero-inner{
+      padding-bottom:40px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,59 +59,120 @@
       <nav class="main-nav" aria-label="Main navigation">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <ul id="nav-list" class="nav-list">
-          <li><a href="/welcome" class="active">Welcome</a></li>
-          <li><a href="/who-we-are">Who We Are</a></li> <!-- NEW BUTTON -->
-          <li><a href="/what-we-believe">What We Believe</a></li>
-          <li><a href="/giving">Giving</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="#welcome-section" class="active">Welcome</a></li>
+          <li><a href="#who-we-are-section">Who We Are</a></li>
+          <li><a href="#what-we-believe-section">What We Believe</a></li>
+          <li><a href="#giving-section">Giving</a></li>
+          <li><a href="#contact-section">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main" class="site-main">
-    <section class="hero">
+    <!-- Welcome Section -->
+    <section id="welcome-section">
       <div class="container hero-inner">
         <h1 class="hero-title">Welcome to Cornerstone Delaware Tamil Prayer Fellowship</h1>
         <p class="hero-sub">
           We are a Bible-believing, non-denominational church gathering in New Castle, Delaware. We welcome you to our community of worshiping and witnessing believers who love the Lord Jesus Christ!
         </p>
         <p class="hero-note">See calendar below for services and other events</p>
+
+        <section class="info-strip">
+          <div class="container">
+            <div class="info-grid">
+              <div class="info-card">
+                <h3>Our Church</h3>
+                <p>Bible-believing • Non-denominational</p>
+              </div>
+
+              <div class="info-card">
+                <h3>Location</h3>
+                <p>140 Airport Road<br>New Castle, DE 19720</p>
+              </div>
+
+              <div class="info-card">
+                <h3>Calendar</h3>
+                <p>See calendar below for services and other events</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendar-section">
+          <div class="container">
+            <h2>Church Calendar</h2>
+            <iframe 
+              src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" 
+              scrolling="no">
+            </iframe>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="info-strip">
-      <div class="container">
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Our Church</h3> <!-- CHANGED TITLE -->
-            <p>Bible-believing • Non-denominational</p>
-          </div>
+    <!-- Who We Are Section -->
+    <section id="who-we-are-section" style="display:none;">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Who We Are</h1>
 
-          <div class="info-card">
-            <h3>Location</h3>
-            <p>140 Airport Road<br>
-               New Castle, DE 19720</p>
-          </div>
+        <h2 class="subtitle-large">Christ, Our Cornerstone</h2>
+        <p class="subtitle-large-content">
+          Now, therefore, you are no longer strangers and foreigners, but fellow citizens with the saints and members of the household of God, having been built on the foundation of the apostles and prophets, Jesus Christ Himself being the chief cornerstone, in whom the whole building, being fitted together, grows into a holy temple in the Lord, in whom you also are being built together for a dwelling place of God in the Spirit. <br><strong>EPHESIANS 2:19-22 NKJV</strong>
+        </p>
 
-          <div class="info-card">
-            <h3>Calendar</h3>
-            <p>See calendar below for services and other events</p>
-          </div>
-        </div>
+        <h2 class="subtitle">History of Our Church</h2>
+        <p>
+          In the early 1990s, a few friends and students began a weekly Bible study fellowship in Philadelphia to study the Word of God & pray together. Over the years, the fellowship moved places & the Lord added new people and built up that group of believers.
+        </p>
+        <p>
+          Cornerstone Fellowship was officially formed in 2005 & continued to have fellowship and Bible studies on Fridays. In 2008, the church began with weekly Sunday worship services and the Lord has established this church for His glory!
+        </p>
+        <p>
+          Cornerstone is a non-denominational, Bible-believing Church living to glorify the name of the Lord Jesus Christ!
+        </p>
+
+        <h2 class="subtitle">About the Pastor</h2>
+        <p>
+          Visuvasam Dhanaraj is our founding pastor and he has been serving the Lord Jesus for over 30 years. Pastor Visu has a passion to see people come to the saving knowledge of the Lord Jesus Christ and have a living relationship with the Lord! He is blessed with his wife, Val, and a wonderful team of leaders and volunteers who serve faithfully at Cornerstone!
+        </p>
+
+        <h2 class="subtitle">Vision, Purpose, and Mission</h2>
+        <ul>
+          <li>To know Christ and to make Him known</li>
+          <li>To lead people to the saving knowledge of the Lord Jesus Christ</li>
+          <li>To disciple people to become disciple-makers</li>
+          <li>To build lives for the glory of God</li>
+          <li>To walk in the gifts and the fruit of the Holy Spirit</li>
+          <li>To serve the community with the love of Christ</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Calendar Section -->
-    <section class="calendar-section">
-      <div class="container">
-        <h2>Church Calendar</h2>
-        <iframe 
-          src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" 
-          scrolling="no">
-        </iframe>
+    <!-- Placeholder sections -->
+    <section id="what-we-believe-section" style="display:none;">
+      <div class="container hero-inner">
+        <h1 class="hero-title">What We Believe</h1>
+        <p>Content coming soon...</p>
       </div>
     </section>
+
+    <section id="giving-section" style="display:none;">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Giving</h1>
+        <p>Content coming soon...</p>
+      </div>
+    </section>
+
+    <section id="contact-section" style="display:none;">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Contact</h1>
+        <p>Content coming soon...</p>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -78,9 +180,42 @@
     </div>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <script>
+    // Page switching JS
+    document.addEventListener("DOMContentLoaded", function() {
+      const navLinks = document.querySelectorAll(".nav-list a");
+      const sections = document.querySelectorAll("main section");
+
+      // Hide all sections except the first
+      sections.forEach((sec, idx) => {
+        if(idx !== 0) sec.style.display = "none";
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+          e.preventDefault();
+
+          // Remove 'active' from all links
+          navLinks.forEach(l => l.classList.remove("active"));
+          this.classList.add("active");
+
+          const targetId = this.getAttribute("href").replace("#","");
+          sections.forEach(sec => {
+            sec.style.display = (sec.id === targetId) ? "block" : "none";
+          });
+
+          // Scroll to top smoothly
+          window.scrollTo({top:0, behavior:"smooth"});
+        });
+      });
+
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
+
 
 
 
