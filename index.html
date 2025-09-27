@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cornerstone Delaware Tamil Prayer Fellowship — Welcome</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* Center the embedded calendar */
+    .calendar-container {
+      width: 100%;
+      max-width: 800px;  /* limits calendar width */
+      margin: 2rem auto; /* centers horizontally */
+    }
+
+    .calendar-container iframe {
+      width: 100%;
+      height: 600px;
+      display: block; /* ensures proper centering */
+      border: 0;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
+
       <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <ul id="nav-list" class="nav-list">
           <li><a href="index.html" class="active">Welcome</a></li>
           <li><a href="who-we-are.html">Who We Are</a></li>
@@ -30,7 +47,7 @@
       <div class="container hero-inner">
         <h1 class="hero-title">Welcome to Cornerstone Delaware Tamil Prayer Fellowship</h1>
         <p class="hero-sub">
-          We are a Bible-believing, non-denominational church located at New Castle, Delaware. We welcome you to our community of worshiping and witnessing believers who love the Lord Jesus Christ!
+          We are a Bible-believing, non-denominational church located in New Castle, Delaware. We welcome you to our community of worshiping and witnessing believers who love the Lord Jesus Christ!
         </p>
         <p class="hero-note">See calendar below for services and other events</p>
       </div>
@@ -41,14 +58,17 @@
         <div class="info-grid">
           <div class="info-card">
             <h3>Timings</h3>
-            <p>Bilingual Service:<br>
+            <p>
+              Bilingual Service:<br>
               Every Third Saturday from 3:30pm to 6:00pm
             </p>
           </div>
+
           <div class="info-card">
             <h3>Location</h3>
             <p>140 Airport Road, New Castle, DE 19720</p>
           </div>
+
           <div class="info-card">
             <h3>Calendar</h3>
             <p>See calendar below for services and other events</p>
@@ -57,9 +77,14 @@
       </div>
     </section>
 
-    <section class="calendar">
-      <div class="container">
-        <iframe src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" style="border:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <!-- Centered Google Calendar -->
+    <section class="calendar-section">
+      <div class="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
       </div>
     </section>
   </main>
@@ -70,11 +95,10 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 
