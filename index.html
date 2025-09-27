@@ -7,6 +7,7 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -17,10 +18,11 @@
       <nav class="main-nav" aria-label="Main navigation">
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <ul id="nav-list" class="nav-list">
-          <li><a href="index.html" class="active">Welcome</a></li>
-          <li><a href="what-we-believe.html">What We Believe</a></li>
-          <li><a href="giving.html">Giving</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="/welcome" class="active">Welcome</a></li>
+          <li><a href="/who-we-are">Who We Are</a></li> <!-- NEW BUTTON -->
+          <li><a href="/what-we-believe">What We Believe</a></li>
+          <li><a href="/giving">Giving</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -41,13 +43,14 @@
       <div class="container">
         <div class="info-grid">
           <div class="info-card">
-            <h3>Our Church</h3>
+            <h3>Our Church</h3> <!-- CHANGED TITLE -->
             <p>Bible-believing • Non-denominational</p>
           </div>
 
           <div class="info-card">
             <h3>Location</h3>
-            <p>140 Airport Road<br>New Castle, DE 19720</p>
+            <p>140 Airport Road<br>
+               New Castle, DE 19720</p>
           </div>
 
           <div class="info-card">
@@ -58,20 +61,16 @@
       </div>
     </section>
 
+    <!-- Calendar Section -->
     <section class="calendar-section">
       <div class="container">
         <h2>Church Calendar</h2>
         <iframe 
           src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" 
-          style="border:0" 
-          width="800" 
-          height="600" 
-          frameborder="0" 
           scrolling="no">
         </iframe>
       </div>
     </section>
-  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -79,11 +78,10 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 
