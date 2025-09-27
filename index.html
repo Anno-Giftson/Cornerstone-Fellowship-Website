@@ -1,77 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cornerstone Delaware Tamil Prayer Fellowship — Welcome</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cornerstone Delaware Tamil Prayer Fellowship</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-        <ul id="nav-list" class="nav-list">
-          <li><a href="index.html" class="active">Welcome</a></li>
-          <li><a href="who-we-are.html">Who We Are</a></li>
-          <li><a href="what-we-believe.html">What We Believe</a></li>
-          <li><a href="giving.html">Giving</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header>
+    <div class="logo">Cornerstone</div>
+    <nav class="nav-desktop">
+      <ul>
+        <li><a href="index.html">Welcome</a></li>
+        <li><a href="who-we-are.html">Who We Are</a></li>
+        <li><a href="what-we-believe.html">What We Believe</a></li>
+        <li><a href="giving.html">Giving</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle">&#9776;</button>
   </header>
 
-  <main id="main" class="site-main">
-    <section class="hero">
-      <div class="container hero-inner">
-        <h1 class="hero-title">Welcome to Cornerstone Delaware Tamil Prayer Fellowship</h1>
-        <p class="hero-sub">
-          We are a Bible-believing, non-denominational church located at 140 Airport Road, New Castle, DE 19720. We welcome you to our community of worshiping and witnessing believers who love the Lord Jesus Christ!
-        </p>
-        <p class="hero-note">See calendar below for services and other events</p>
-      </div>
-    </section>
+  <!-- Slideout Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <ul>
+      <li><a href="index.html">Welcome</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="what-we-believe.html">What We Believe</a></li>
+      <li><a href="giving.html">Giving</a></li>
+    </ul>
+  </div>
+  <div class="overlay" id="overlay"></div>
 
-    <section class="info-strip">
-      <div class="container">
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Our Church</h3>
-            <p>Bible-believing • Non-denominational</p>
-          </div>
-          <div class="info-card">
-            <h3>Location</h3>
-            <p>140 Airport Road, New Castle, DE 19720</p>
-          </div>
-          <div class="info-card">
-            <h3>Calendar</h3>
-            <p>See calendar below for services and other events</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="calendar">
-      <div class="container">
-        <iframe src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" style="border:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-      </div>
+  <main>
+    <section class="welcome">
+      <h1>Welcome to Cornerstone Delaware Tamil Prayer Fellowship</h1>
+      <p>See calendar below for services and other events</p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Cornerstone Delaware Tamil Prayer Fellowship</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Cornerstone Delaware Tamil Prayer Fellowship</p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
