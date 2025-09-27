@@ -10,19 +10,19 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <style>
-    /* Contact page adjustments */
+    /* Ensure content aligns with title */
     .hero.contact-hero {
-      padding: 1.5rem 0 0.5rem 0; /* move title up, reduce bottom space */
+      padding: 2rem 0; /* same as other pages */
     }
 
     .hero.contact-hero .hero-inner {
-      text-align: left; /* horizontal alignment same as content */
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* left-align like other pages */
     }
 
-    .page-content.contact-content {
-      margin-top: 0.5rem; /* small gap between title and content */
-      padding-left: 0;     /* align with hero-inner */
-      padding-right: 0;
+    .hero.contact-hero .hero-inner p {
+      margin: 0.5rem 0 0 0; /* small spacing for each line */
     }
   </style>
 </head>
@@ -47,11 +47,6 @@
     <section class="hero contact-hero">
       <div class="container hero-inner">
         <h1 class="hero-title">Contact Us</h1>
-      </div>
-    </section>
-
-    <section class="page-content contact-content">
-      <div class="container">
         <p><strong>Cornerstone Delaware Tamil Prayer Fellowship</strong></p>
         <p>140 Airport Road<br>New Castle, DE, 19720</p>
         <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
@@ -69,6 +64,7 @@
   <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 
