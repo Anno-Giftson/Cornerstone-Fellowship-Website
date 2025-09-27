@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cornerstone Delaware Tamil Prayer Fellowship — Giving</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Giving button style */
+    .give-link {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background-color: #0077cc;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .give-link:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="index.html">Welcome</a></li>
+          <li><a href="who-we-are.html">Who We Are</a></li>
+          <li><a href="what-we-believe.html">What We Believe</a></li>
+          <li><a href="giving.html" class="active">Giving</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <div class="container hero-inner">
+      <h1 class="hero-title">Giving</h1>
+      <p class="hero-sub">Thank you for your faithful giving to the work of the ministry. God bless you!</p>
+      <p>
+        <a href="https://www.eservicepayments.com/cgi-bin/Vanco_ver3.vps?pagetoken=60751e7f43f743eb4fb9c66709729684283c1e6a" target="_blank" class="give-link">Click Here to Give</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Cornerstone Delaware Tamil Prayer Fellowship</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
