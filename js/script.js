@@ -1,42 +1,50 @@
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
-navToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+}
 
 // Set year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-// Admin Button & Popup
+// Admin Button & Popup (only on contact page)
 const adminBtn = document.getElementById('admin-btn');
 const adminPopup = document.getElementById('admin-popup');
 const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
 
-adminBtn.addEventListener('click', () => {
-  adminPopup.style.display = 'block'; // shows popup only when button clicked
-});
+if (adminBtn && adminPopup && closePopup && adminForm) {
+  adminBtn.addEventListener('click', () => {
+    adminPopup.style.display = 'block';
+  });
 
-closePopup.addEventListener('click', () => {
-  adminPopup.style.display = 'none';
-});
-
-adminForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  // Simple placeholder authentication
-  if(username === "admin" && password === "1234"){
-    alert("Login successful!");
+  closePopup.addEventListener('click', () => {
     adminPopup.style.display = 'none';
-  } else {
-    alert("Invalid username or password.");
-  }
+  });
 
-  adminForm.reset();
-});
+  adminForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Simple placeholder authentication
+    if (username === "admin" && password === "1234") {
+      alert("Login successful!");
+      adminPopup.style.display = 'none';
+    } else {
+      alert("Invalid username or password.");
+    }
+
+    adminForm.reset();
+  });
+}
+
 
 
 
