@@ -1,44 +1,44 @@
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
-navToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+}
 
 // Set year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
 
-// Admin popup logic
-const adminButton = document.getElementById('admin-button');
-const adminPopup = document.getElementById('admin-popup');
-const closePopup = document.getElementById('close-popup');
-const adminForm = document.getElementById('admin-form');
+// Admin button + popup
+const adminBtn = document.getElementById("admin-btn");
+const adminPopup = document.getElementById("admin-popup");
 
-// Open popup when button clicked
-if (adminButton) {
-  adminButton.addEventListener('click', () => {
-    adminPopup.style.display = 'block';
+if (adminBtn && adminPopup) {
+  adminBtn.addEventListener("click", () => {
+    adminPopup.style.display = "block";
   });
 }
 
-// Close popup when X clicked
-if (closePopup) {
-  closePopup.addEventListener('click', () => {
-    adminPopup.style.display = 'none';
-  });
-}
+// Admin form
+const adminForm = document.getElementById("admin-form");
 
-// Handle form submit
 if (adminForm) {
-  adminForm.addEventListener('submit', (e) => {
+  adminForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     if (username === "admin" && password === "1234") {
-      window.location.href = "admin.html"; // redirect to admin page
+      window.location.href = "admin.html";
     } else {
       alert("Incorrect username or password");
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
     }
   });
 }
+
