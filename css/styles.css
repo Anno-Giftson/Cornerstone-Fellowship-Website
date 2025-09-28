@@ -152,13 +152,6 @@ body{
   margin: 0 auto;
 }
 
-/* contact content */
-.contact-content{
-  margin-top:24px;
-  font-size:1rem;
-  line-height:1.6;
-}
-
 /* footer */
 .site-footer{
   border-top:1px solid rgba(15,23,36,0.04);
@@ -190,21 +183,27 @@ body{
 }
 
 /* Admin Button */
-#admin-btn{
+.admin-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
-  background: transparent;
-  border: none;
   cursor: pointer;
+  font-weight: bold;
   z-index: 1001;
+}
+.admin-btn:hover {
+  background: var(--accent-2);
 }
 
 /* Admin Popup */
-#admin-popup{
-  display: none; /* hidden by default */
+#admin-popup {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -217,37 +216,31 @@ body{
   width: 90%;
   z-index: 1002;
 }
-#admin-popup h2{
-  margin-top:0;
-  font-family: "Montserrat", sans-serif;
+#admin-popup h3 {
+  margin-top: 0;
   color: var(--accent);
-  text-align: center;
 }
-#admin-popup form{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-#admin-popup label{
-  font-weight: 600;
-}
-#admin-popup input{
-  padding: 8px 10px;
-  border-radius: 6px;
+#admin-popup input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
   border: 1px solid #ccc;
-}
-#admin-popup button{
-  padding: 10px;
-  border: none;
   border-radius: 6px;
+}
+#admin-popup button {
+  width: 100%;
+  padding: 10px;
   background: var(--accent);
   color: #fff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
 }
-#admin-popup button#close-popup{
-  background: #6b7280;
+#admin-popup button:hover {
+  background: var(--accent-2);
 }
+
 
 
 
