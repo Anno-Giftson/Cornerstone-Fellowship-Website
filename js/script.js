@@ -15,7 +15,7 @@ const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
 
 adminBtn.addEventListener('click', () => {
-  adminPopup.style.display = 'block';
+  adminPopup.style.display = 'block'; // shows popup only when button clicked
 });
 
 closePopup.addEventListener('click', () => {
@@ -37,6 +37,7 @@ adminForm.addEventListener('submit', (e) => {
 
   adminForm.reset();
 });
+
 
 
 
