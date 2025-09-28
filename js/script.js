@@ -20,9 +20,10 @@ const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
 
 if (adminBtn && adminPopup && closePopup && adminForm) {
-  adminBtn.addEventListener('click', () => {
-    adminPopup.style.display = 'block';
-  });
+adminBtn.addEventListener('click', () => {
+  console.log("Admin button clicked!");
+  adminPopup.style.display = 'block';
+});
 
   closePopup.addEventListener('click', () => {
     adminPopup.style.display = 'none';
