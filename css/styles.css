@@ -161,6 +161,19 @@ body{
   font-size:.95rem;
 }
 
+/* Admin button bottom-right corner (Contact page only) */
+#admin-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;       /* clickable area */
+  height: 50px;      /* clickable area */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;     /* above everything */
+}
+
 /* responsive */
 @media (max-width:900px){
   #site-logo{height:90px !important}
@@ -181,6 +194,7 @@ body{
   .nav-list.show{display:flex}
   .header-inner{padding:12px 0}
 }
+
 
 
 
