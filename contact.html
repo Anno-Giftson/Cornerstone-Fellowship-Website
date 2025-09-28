@@ -56,10 +56,23 @@
         </p>
       </div>
     </section>
-  </main>
 
-  <!-- Admin button (invisible) -->
-  <button id="admin-btn"></button>
+    <!-- Admin Button -->
+    <button id="admin-btn"></button>
+
+    <!-- Admin Popup -->
+    <div id="admin-popup">
+      <h2>Admin Login</h2>
+      <form id="admin-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="submit">Login</button>
+        <button type="button" id="close-popup">Cancel</button>
+      </form>
+    </div>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -67,11 +80,12 @@
       <p>&copy; <span id="year"></span> Cornerstone Delaware Tamil Prayer Fellowship</p>
     </div>
   </footer>
-  
+
   <!-- JS -->
   <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 
