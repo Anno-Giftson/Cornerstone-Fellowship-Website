@@ -8,53 +8,37 @@ navToggle.addEventListener('click', () => {
 // Set year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Admin Button & Popup
-const adminBtn = document.getElementById('admin-btn');
+// Admin popup logic
+const adminButton = document.getElementById('admin-button');
 const adminPopup = document.getElementById('admin-popup');
 const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
 
-if (adminBtn && adminPopup && closePopup && adminForm) {
-  // Open popup
-  adminBtn.addEventListener('click', () => {
+// Open popup when button clicked
+if (adminButton) {
+  adminButton.addEventListener('click', () => {
     adminPopup.style.display = 'block';
   });
+}
 
-  // Close popup
+// Close popup when X clicked
+if (closePopup) {
   closePopup.addEventListener('click', () => {
     adminPopup.style.display = 'none';
   });
+}
 
-  // Handle login
+// Handle form submit
+if (adminForm) {
   adminForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Simple placeholder authentication
     if (username === "admin" && password === "1234") {
-      window.location.href = "admin.html"; // Redirect straight to admin page
+      window.location.href = "admin.html"; // redirect to admin page
     } else {
-      alert("Invalid username or password.");
+      alert("Incorrect username or password");
     }
-
-    adminForm.reset();
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
