@@ -1,84 +1,96 @@
-// ===== Mobile nav toggle =====
+// Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
 navToggle.addEventListener('click', () => {
   navList.classList.toggle('show');
 });
 
-// ===== Set year in footer =====
+// Set year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ===== Admin Logic =====
-const adminBtn = document.getElementById('admin-btn'); // invisible button on contact.html
-const adminPopup = document.getElementById('admin-popup');
-const closePopup = document.getElementById('close-popup');
-const adminForm = document.getElementById('admin-form');
-const navAdmin = document.getElementById('nav-admin'); // Admin button in nav
-const navLogout = document.getElementById('nav-logout'); // Log out button if present
+// --- Admin Logic ---
+const adminBtn = document.getElementById('admin-btn');        // invisible button on contact page
+const adminPopup = document.getElementById('admin-popup');   // popup container
+const closePopup = document.getElementById('close-popup');   // cancel button
+const adminForm = document.getElementById('admin-form');     // form element
+const navAdmin = document.getElementById('nav-admin');       // Admin button in nav
 
-// Function to show/hide admin elements based on session
-function updateAdminUI() {
-  if(sessionStorage.getItem("isAdmin") === "true") {
-    // Show Admin button in nav
-    if(navAdmin) navAdmin.classList.remove("hidden");
-    // Show log out button if it exists
-    if(navLogout) navLogout.classList.remove("hidden");
-    // Hide invisible admin button on contact.html
-    if(adminBtn) adminBtn.style.display = "none";
-  } else {
-    if(navAdmin) navAdmin.classList.add("hidden");
-    if(navLogout) navLogout.classList.add("hidden");
-    // Show invisible admin button only on contact.html
-    if(adminBtn) adminBtn.style.display = "block";
+// Create Log Out button dynamically
+let logoutBtn = null;
+
+// Function to show admin/nav buttons after login
+function setAdminLoggedIn() {
+  sessionStorage.setItem('adminLoggedIn', 'true');
+  if (navAdmin) navAdmin.classList.remove('hidden');
+  addLogoutButton();
+}
+
+// Function to remove admin session
+function logoutAdmin() {
+  sessionStorage.removeItem('adminLoggedIn');
+  if (navAdmin) navAdmin.classList.add('hidden');
+  if (logoutBtn) {
+    logoutBtn.remove();
+    logoutBtn = null;
+  }
+  // Redirect to welcome page after logout
+  window.location.href = 'index.html';
+}
+
+// Dynamically add Log Out button to nav
+function addLogoutButton() {
+  if (!logoutBtn) {
+    logoutBtn = document.createElement('li');
+    logoutBtn.innerHTML = '<a href="#" id="nav-logout">Log Out</a>';
+    navList.appendChild(logoutBtn);
+    document.getElementById('nav-logout').addEventListener('click', (e) => {
+      e.preventDefault();
+      logoutAdmin();
+    });
   }
 }
 
-// Run on page load
-updateAdminUI();
+// On page load, check if admin is logged in
+if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+  if (navAdmin) navAdmin.classList.remove('hidden');
+  addLogoutButton();
+} else {
+  if (navAdmin) navAdmin.classList.add('hidden');
+}
 
-// ===== Admin button click (invisible on contact.html) =====
-if(adminBtn){
+// Admin popup logic
+if (adminBtn) {
   adminBtn.addEventListener('click', () => {
     adminPopup.style.display = 'block';
   });
 }
 
-// ===== Close popup =====
-if(closePopup){
+if (closePopup) {
   closePopup.addEventListener('click', () => {
     adminPopup.style.display = 'none';
-    if(adminForm) adminForm.reset(); // Clear fields on cancel
+    adminForm.reset();
   });
 }
 
-// ===== Admin form submit =====
-if(adminForm){
+if (adminForm) {
   adminForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if(username === "admin" && password === "1234"){
-      // Set session
-      sessionStorage.setItem("isAdmin", "true");
-      // Redirect to admin page
-      window.location.href = "admin.html";
+    // Replace with your actual credentials
+    if (username === "admin" && password === "1234") {
+      setAdminLoggedIn();
+      adminPopup.style.display = 'none';
+      adminForm.reset();
+      window.location.href = 'admin.html'; // redirect to admin page
     } else {
       alert("Incorrect username or password.");
+      adminForm.reset();
     }
   });
 }
 
-// ===== Log out button click =====
-if(navLogout){
-  navLogout.addEventListener('click', () => {
-    sessionStorage.removeItem("isAdmin");
-    // Update UI immediately
-    updateAdminUI();
-    // Optional: redirect to welcome page
-    window.location.href = "index.html";
-  });
-}
 
 
 
