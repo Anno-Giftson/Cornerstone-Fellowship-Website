@@ -250,6 +250,11 @@ body{
   margin-top: 8px;
 }
 
+/* Hides elements by default */
+.hidden {
+  display: none !important;
+}
+
 
 
 
