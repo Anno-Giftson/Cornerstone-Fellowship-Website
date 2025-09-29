@@ -1,7 +1,6 @@
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navList = document.querySelector('.nav-list');
-
 navToggle.addEventListener('click', () => {
   navList.classList.toggle('show');
 });
@@ -21,26 +20,25 @@ adminBtn.addEventListener('click', () => {
 
 closePopup.addEventListener('click', () => {
   adminPopup.style.display = 'none';
+  adminForm.reset(); // Clear input fields when popup is closed
 });
 
-// When user submits admin login
 adminForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Check credentials
+  // Simple placeholder authentication
   if(username === "admin" && password === "1234"){
-    // Redirect to admin.html
+    // Redirect to admin page
     window.location.href = "admin.html";
   } else {
-    // Show error message
-    alert("Incorrect username or password.");
+    alert("Invalid username or password.");
   }
 
-  adminForm.reset();
+  adminForm.reset(); // Clear input fields after submission attempt
 });
+
 
 
 
