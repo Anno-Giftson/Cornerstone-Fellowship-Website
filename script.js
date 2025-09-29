@@ -8,73 +8,60 @@ navToggle.addEventListener('click', () => {
 // Set year in footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Admin Login (contact page only)
+// Admin Elements
 const adminBtn = document.getElementById('admin-btn');
 const adminPopup = document.getElementById('admin-popup');
 const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
 const navAdmin = document.getElementById('nav-admin');
+const logoutBtn = document.getElementById('logout-btn');
 
+// Hide admin/nav buttons initially
+navAdmin.classList.add('hidden');
+logoutBtn.classList.add('hidden');
+
+// Show popup on clicking admin button (only on contact page)
 if(adminBtn){
   adminBtn.addEventListener('click', () => {
     adminPopup.style.display = 'block';
   });
 }
 
-if(closePopup){
-  closePopup.addEventListener('click', () => {
+// Close popup and clear fields
+closePopup.addEventListener('click', () => {
+  adminPopup.style.display = 'none';
+  adminForm.reset();
+});
+
+// Handle login
+adminForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if(username === "admin" && password === "1234"){
+    // Login successful
     adminPopup.style.display = 'none';
     adminForm.reset();
-  });
-}
 
-if(adminForm){
-  adminForm.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    // Show admin nav button and logout button
+    navAdmin.classList.remove('hidden');
+    logoutBtn.classList.remove('hidden');
 
-    if(username === "admin" && password === "1234"){
-      // Show Admin button
-      if(navAdmin) navAdmin.classList.remove('hidden');
-
-      // Show Logout button
-      showLogoutButton();
-
-      // Hide popup
-      adminPopup.style.display = 'none';
-      adminForm.reset();
-
-      // Redirect to admin page
-      window.location.href = "admin.html";
-    } else {
-      alert("Incorrect username or password.");
-      adminForm.reset();
-    }
-  });
-}
-
-// Logout button functions
-function showLogoutButton(){
-  if(!document.getElementById('nav-logout')){
-    const logoutLi = document.createElement('li');
-    const logoutA = document.createElement('a');
-    logoutA.href = "#";
-    logoutA.id = 'nav-logout';
-    logoutA.textContent = 'Logout';
-    logoutA.addEventListener('click', ()=>{
-      if(navAdmin) navAdmin.classList.add('hidden');
-      removeLogoutButton();
-    });
-    logoutLi.appendChild(logoutA);
-    document.querySelector('.nav-list').appendChild(logoutLi);
+    // Optionally redirect to admin page
+    window.location.href = "admin.html";
+  } else {
+    alert("Invalid username or password.");
   }
-}
+});
 
-function removeLogoutButton(){
-  const logoutBtn = document.getElementById('nav-logout');
-  if(logoutBtn) logoutBtn.parentElement.remove();
-}
+// Logout button
+logoutBtn.addEventListener('click', () => {
+  navAdmin.classList.add('hidden');
+  logoutBtn.classList.add('hidden');
+  alert("You have been logged out.");
+});
+
 
 
 
