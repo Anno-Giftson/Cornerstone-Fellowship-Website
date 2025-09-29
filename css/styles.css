@@ -192,10 +192,10 @@ body{
 /* Admin Button */
 #admin-btn {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
+  bottom: 15px;
+  right: 15px;
+  width: 20px;   
+  height: 20px;  
   background: transparent;
   border: none;
   cursor: pointer;
@@ -204,7 +204,7 @@ body{
 
 /* Admin Popup */
 #admin-popup {
-  display: none; /* hidden by default */
+  display: none; 
   position: fixed;
   top: 50%;
   left: 50%;
@@ -217,26 +217,28 @@ body{
   width: 90%;
   z-index: 1002;
 }
-#admin-popup h2{
-  margin-top:0;
+#admin-popup h2 {
+  margin-top: 0;
   font-family: "Montserrat", sans-serif;
   color: var(--accent);
   text-align: center;
 }
-#admin-popup form{
+#admin-popup form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-#admin-popup label{
+#admin-popup label {
   font-weight: 600;
 }
-#admin-popup input{
+#admin-popup input {
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-#admin-popup button{
+
+/* Buttons in popup with spacing */
+#admin-popup button {
   padding: 10px;
   border: none;
   border-radius: 6px;
@@ -244,10 +246,12 @@ body{
   color: #fff;
   cursor: pointer;
   font-weight: 600;
+  margin-top: 10px; 
 }
-#admin-popup button#close-popup{
+#admin-popup button#close-popup {
   background: #6b7280;
 }
+
 
 
 
