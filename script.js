@@ -13,6 +13,24 @@ const adminBtn = document.getElementById('admin-btn');
 const adminPopup = document.getElementById('admin-popup');
 const closePopup = document.getElementById('close-popup');
 const adminForm = document.getElementById('admin-form');
+const nav = document.querySelector('.nav-list');
+
+function addAdminNav() {
+  if(!document.getElementById('nav-admin')){
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = 'admin.html';
+    a.textContent = 'Admin';
+    a.id = 'nav-admin';
+    li.appendChild(a);
+    nav.appendChild(li);
+  }
+}
+
+// Check if admin is logged in (localStorage)
+if(localStorage.getItem('isAdmin') === 'true'){
+  addAdminNav();
+}
 
 adminBtn.addEventListener('click', () => {
   adminPopup.style.display = 'block';
@@ -20,7 +38,7 @@ adminBtn.addEventListener('click', () => {
 
 closePopup.addEventListener('click', () => {
   adminPopup.style.display = 'none';
-  adminForm.reset(); // Clear the input fields
+  adminForm.reset(); // clear fields on cancel
 });
 
 adminForm.addEventListener('submit', (e) => {
@@ -28,15 +46,24 @@ adminForm.addEventListener('submit', (e) => {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  // Simple placeholder authentication
   if(username === "admin" && password === "1234"){
-    window.location.href = "admin.html"; // Redirect to admin page
-  } else {
-    alert("Invalid username or password.");
-  }
+    // Set admin login in localStorage
+    localStorage.setItem('isAdmin', 'true');
 
-  adminForm.reset();
+    // Hide popup & reset form
+    adminPopup.style.display = 'none';
+    adminForm.reset();
+
+    // Add Admin button dynamically
+    addAdminNav();
+
+    // Redirect to admin page
+    window.location.href = 'admin.html';
+  } else {
+    alert("Incorrect username or password.");
+  }
 });
+
 
 
 
