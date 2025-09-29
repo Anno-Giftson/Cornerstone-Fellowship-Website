@@ -20,7 +20,7 @@ adminBtn.addEventListener('click', () => {
 
 closePopup.addEventListener('click', () => {
   adminPopup.style.display = 'none';
-  adminForm.reset(); // Clear input fields when popup is closed
+  adminForm.reset(); // Clear the input fields
 });
 
 adminForm.addEventListener('submit', (e) => {
@@ -30,14 +30,14 @@ adminForm.addEventListener('submit', (e) => {
 
   // Simple placeholder authentication
   if(username === "admin" && password === "1234"){
-    // Redirect to admin page
-    window.location.href = "admin.html";
+    window.location.href = "admin.html"; // Redirect to admin page
   } else {
     alert("Invalid username or password.");
   }
 
-  adminForm.reset(); // Clear input fields after submission attempt
+  adminForm.reset();
 });
+
 
 
 
