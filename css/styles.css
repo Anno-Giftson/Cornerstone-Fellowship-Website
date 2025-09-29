@@ -157,6 +157,7 @@ body{
   margin-top:24px;
   font-size:1rem;
   line-height:1.6;
+  text-align:left;
 }
 
 /* footer */
@@ -190,12 +191,12 @@ body{
 }
 
 /* Admin Button */
-#admin-btn {
+#admin-btn{
   position: fixed;
   bottom: 15px;
   right: 15px;
-  width: 20px;   
-  height: 20px;  
+  width: 40px;
+  height: 40px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -203,8 +204,8 @@ body{
 }
 
 /* Admin Popup */
-#admin-popup {
-  display: none; 
+#admin-popup{
+  display: none; /* hidden initially */
   position: fixed;
   top: 50%;
   left: 50%;
@@ -217,28 +218,27 @@ body{
   width: 90%;
   z-index: 1002;
 }
-#admin-popup h2 {
-  margin-top: 0;
+#admin-popup h2{
+  margin-top:0;
   font-family: "Montserrat", sans-serif;
   color: var(--accent);
   text-align: center;
 }
-#admin-popup form {
+#admin-popup form{
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 }
-#admin-popup label {
+#admin-popup label{
   font-weight: 600;
 }
-#admin-popup input {
+#admin-popup input{
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
+  font-size: 0.95rem;
 }
-
-/* Buttons in popup with spacing */
-#admin-popup button {
+#admin-popup button{
   padding: 10px;
   border: none;
   border-radius: 6px;
@@ -246,11 +246,16 @@ body{
   color: #fff;
   cursor: pointer;
   font-weight: 600;
-  margin-top: 10px; 
 }
-#admin-popup button#close-popup {
+#admin-popup button#close-popup{
   background: #6b7280;
 }
+
+/* Ensure popup buttons have spacing */
+#admin-popup button:not(#close-popup){
+  margin-bottom: 8px;
+}
+
 
 
 
