@@ -255,6 +255,29 @@ body{
   display: none !important;
 }
 
+/* Floating Log Out Button */
+#logout-btn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+#logout-btn:hover {
+  background: #b71c1c;
+}
+
 
 
 
