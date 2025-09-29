@@ -10,6 +10,7 @@
   --header-height: 120px;
 }
 
+/* Reset */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -144,7 +145,7 @@ body{
 .calendar-section iframe{
   width: 100%;
   max-width: 900px;
-  aspect-ratio: 16 / 9; /* responsive */
+  aspect-ratio: 16 / 9;
   border: 0;
   border-radius:12px;
   box-shadow:0 8px 28px rgba(12,18,30,0.07);
@@ -157,7 +158,6 @@ body{
   margin-top:24px;
   font-size:1rem;
   line-height:1.6;
-  text-align:left;
 }
 
 /* footer */
@@ -190,11 +190,11 @@ body{
   .header-inner{padding:12px 0}
 }
 
-/* Admin Button */
+/* Admin button (invisible by default) */
 #admin-btn{
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
   width: 40px;
   height: 40px;
   background: transparent;
@@ -203,9 +203,9 @@ body{
   z-index: 1001;
 }
 
-/* Admin Popup */
+/* Admin popup */
 #admin-popup{
-  display: none; /* hidden initially */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -227,7 +227,7 @@ body{
 #admin-popup form{
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 #admin-popup label{
   font-weight: 600;
@@ -236,7 +236,6 @@ body{
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 0.95rem;
 }
 #admin-popup button{
   padding: 10px;
@@ -251,10 +250,6 @@ body{
   background: #6b7280;
 }
 
-/* Ensure popup buttons have spacing */
-#admin-popup button:not(#close-popup){
-  margin-bottom: 8px;
-}
 
 
 
