@@ -5,51 +5,57 @@ navToggle.addEventListener('click', () => {
   navList.classList.toggle('show');
 });
 
-// Set year in footer
+// Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Admin session management
-document.addEventListener("DOMContentLoaded", () => {
-  const adminNav = document.getElementById("nav-admin"); // nav button
-  const logoutBtn = document.getElementById("logout-btn"); // bottom-left logout
-  const loginForm = document.getElementById("admin-login-form"); // login form
+// Admin button & popup
+const adminBtn = document.getElementById('admin-btn');
+const adminPopup = document.getElementById('admin-popup');
+const closePopup = document.getElementById('close-popup');
+const adminForm = document.getElementById('admin-form');
+const navAdmin = document.getElementById('nav-admin');
 
-  // Check session on page load
+// Show popup
+if (adminBtn) {
+  adminBtn.addEventListener('click', () => {
+    adminPopup.style.display = 'block';
+  });
+}
+
+// Close popup
+if (closePopup) {
+  closePopup.addEventListener('click', () => {
+    adminPopup.style.display = 'none';
+    adminForm.reset();
+  });
+}
+
+// Handle login
+if (adminForm) {
+  adminForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (username === "admin" && password === "1234") {
+      sessionStorage.setItem("isLoggedIn", "true");
+      navAdmin.classList.remove("hidden");
+      window.location.href = "admin.html";
+    } else {
+      alert("Invalid username or password.");
+    }
+  });
+}
+
+// On page load, check login
+window.addEventListener('DOMContentLoaded', () => {
   if (sessionStorage.getItem("isLoggedIn") === "true") {
-    if (adminNav) adminNav.classList.remove("hidden");
-    if (logoutBtn) logoutBtn.classList.remove("hidden");
-  }
-
-  // Handle login form submit
-  if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      if (username === "admin" && password === "1234") {
-        sessionStorage.setItem("isLoggedIn", "true");
-        // Show admin button and logout immediately
-        if (adminNav) adminNav.classList.remove("hidden");
-        if (logoutBtn) logoutBtn.classList.remove("hidden");
-        // Redirect to admin page
-        window.location.href = "admin.html";
-      } else {
-        alert("Incorrect username or password.");
-      }
-    });
-  }
-
-  // Handle logout click
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      sessionStorage.removeItem("isLoggedIn");
-      if (adminNav) adminNav.classList.add("hidden");
-      logoutBtn.classList.add("hidden");
-      window.location.href = "index.html"; // redirect to welcome page
-    });
+    navAdmin.classList.remove("hidden");
+  } else {
+    navAdmin.classList.add("hidden");
   }
 });
+
 
 
 
