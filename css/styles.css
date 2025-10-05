@@ -1,251 +1,229 @@
-:root{
-  --bg: #ffffff;
-  --muted: #6b7280;
-  --accent: #0b3b66;
-  --accent-2: #c69a3a;
-  --card: #f7f9fb;
-  --max-width: 1100px;
-  --radius: 12px;
-  --ease: cubic-bezier(.2,.9,.2,1);
-  --header-height: 120px;
+/* --- General Reset & Body --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Reset */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  color:#0f1724;
-  background:var(--bg);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.55;
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+  background-color: #ffffff;
 }
 
-/* container */
-.container{
-  width:calc(100% - 40px);
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:40px 0;
-}
-
-/* header */
-.site-header{
-  background: var(--bg);
-  border-bottom: 1px solid rgba(15,23,36,0.08);
-  position: sticky;
+/* --- Header --- */
+.site-header {
+  position: fixed;
   top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
 }
-.header-inner{
-  display:flex;
-  gap:20px;
-  align-items:center;
-  justify-content:space-between;
-  padding:20px 0;
-}
-#site-logo{
-  height:120px !important;
-  width:auto !important;
-  display:block;
-  transition:transform .35s var(--ease);
-}
-#site-logo:hover{transform:translateY(-3px)}
 
-/* nav */
-.main-nav{position:relative}
-.nav-toggle{
-  display:none;
-  background:none;
-  border:1px solid rgba(15,23,36,0.06);
-  padding:8px 12px;
-  border-radius:8px;
-  cursor:pointer;
-  font-weight:600;
-}
-.nav-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  gap:18px;
-  align-items:center;
-}
-.nav-list a{
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:600;
-  letter-spacing:0.02em;
-  padding:8px 12px;
-  border-radius:8px;
-  transition:all .25s var(--ease);
-}
-.nav-list a:hover,
-.nav-list a.active{
-  color:var(--accent);
-  background:rgba(11,59,102,0.04);
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
 }
 
-/* hero */
-.hero{
-  padding:80px 0;
-}
-.hero-inner{max-width:900px}
-.hero-title{
-  font-family:"Montserrat",sans-serif;
-  font-size:clamp(28px, 4vw, 44px);
-  margin:0 0 18px 0;
-  color:var(--accent);
-  line-height:1.05;
-}
-.hero-sub{
-  margin:0 0 18px 0;
-  color:#1f2937;
-  font-weight:400;
-  font-size:1.05rem;
-}
-.hero-note{
-  color:var(--muted);
-  font-size:.95rem;
-  margin-top:6px;
+#site-logo {
+  width: 150px; /* Bigger logo */
+  height: auto;
 }
 
-/* info strip */
-.info-strip{padding:36px 0}
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+.main-nav {
+  display: flex;
+  align-items: center;
 }
-.info-card{
-  background:var(--card);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:0 6px 20px rgba(12,18,30,0.04);
-  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
-}
-.info-card:hover{transform:translateY(-4px); box-shadow:0 14px 36px rgba(12,18,30,0.07)}
-.info-card h3{margin:0 0 8px 0; color:var(--accent); font-family:"Montserrat",sans-serif; font-size:1.05rem}
-.info-card p{margin:0; color:var(--muted)}
 
-/* calendar section */
-.calendar-section{
-  padding: 60px 0;
-  background: #f7f9fb;
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 24px;
 }
-.calendar-section h2{
-  font-family:"Montserrat",sans-serif;
-  font-size:2rem;
-  color: var(--accent);
-  text-align:center;
-  margin-bottom:40px;
+
+.nav-list a {
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 600;
 }
-.calendar-section iframe{
-  width: 100%;
+
+.nav-list a.active {
+  color: #0d6efd;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding-top: 120px; /* leave space for fixed header */
+  padding-bottom: 40px;
+}
+
+.hero-inner {
   max-width: 900px;
-  aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius:12px;
-  box-shadow:0 8px 28px rgba(12,18,30,0.07);
-  display: block;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.hero-note {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* --- Info Strip Section --- */
+.info-strip {
+  background-color: #f9fafb;
+  padding: 40px 0;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* contact content */
-.contact-content{
-  margin-top:24px;
-  font-size:1rem;
-  line-height:1.6;
-}
-
-/* footer */
-.site-footer{
-  border-top:1px solid rgba(15,23,36,0.04);
-  padding:26px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-/* responsive */
-@media (max-width:900px){
-  #site-logo{height:90px !important}
-  .info-grid{grid-template-columns:1fr}
-  .nav-toggle{display:inline-block}
-  .nav-list{
-    position:absolute;
-    right:0;
-    top:64px;
-    background:var(--bg);
-    border:1px solid rgba(12,18,30,0.04);
-    padding:10px;
-    border-radius:10px;
-    flex-direction:column;
-    display:none;
-    min-width:180px;
-  }
-  .nav-list.show{display:flex}
-  .header-inner{padding:12px 0}
-}
-
-/* Admin button (invisible by default) */
-#admin-btn{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Admin popup */
-#admin-popup{
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--bg);
+.info-card {
+  background-color: #ffffff;
+  padding: 24px;
   border-radius: 12px;
-  box-shadow: 0 8px 28px rgba(12,18,30,0.2);
-  padding: 30px;
-  max-width: 350px;
-  width: 90%;
-  z-index: 1002;
-}
-#admin-popup h2{
-  margin-top:0;
-  font-family: "Montserrat", sans-serif;
-  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  flex: 1 1 250px;
   text-align: center;
 }
-#admin-popup form{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+
+.info-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #2c3e50;
 }
-#admin-popup label{
-  font-weight: 600;
+
+.info-card p {
+  font-size: 1rem;
+  color: #1f2937;
 }
-#admin-popup input{
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+
+/* --- Calendar Section --- */
+.calendar-section {
+  padding: 40px 0;
 }
-#admin-popup button{
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
+
+.calendar-section h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 24px;
 }
-#admin-popup button#close-popup{
-  background: #6b7280;
+
+.calendar-section iframe {
+  width: 100%;
+  height: 600px;
+  border: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
 }
+
+/* --- Footer --- */
+.site-footer {
+  background-color: #f9fafb;
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* --- Subtitles for Who We Are page --- */
+.subtitle-large{
+  font-family:"Montserrat",sans-serif;
+  font-size:1.6rem; /* slightly bigger */
+  color: #2c3e50;
+  margin-top:40px;
+  margin-bottom:16px;
+}
+
+.subtitle-large-content{
+  font-size:1.15rem; /* slightly bigger content */
+  line-height:1.65;
+  color:#1f2937;
+  margin-bottom:24px;
+}
+
+.subtitle{
+  font-family:"Montserrat",sans-serif;
+  font-size:1.3rem;
+  color: #2c3e50;
+  margin-top:32px;
+  margin-bottom:12px;
+}
+
+.subtitle + p, .subtitle + ul{
+  font-size:1rem;
+  line-height:1.6;
+  color:#1f2937;
+  margin-bottom:16px;
+}
+
+ul{
+  padding-left:20px;
+  margin-bottom:24px;
+}
+
+/* --- Responsive --- */
+@media (max-width:768px){
+  .nav-list{
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 64px;
+    right: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: 1px solid #1f2937;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .info-grid {
+    flex-direction: column;
+  }
+}
+
