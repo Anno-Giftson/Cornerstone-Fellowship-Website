@@ -10,6 +10,7 @@
   --header-height: 120px;
 }
 
+/* Reset */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -189,7 +190,7 @@ body{
   .header-inner{padding:12px 0}
 }
 
-/* Admin Button */
+/* Admin button (invisible by default) */
 #admin-btn{
   position: fixed;
   bottom: 20px;
@@ -202,7 +203,7 @@ body{
   z-index: 1001;
 }
 
-/* Admin Popup */
+/* Admin popup */
 #admin-popup{
   display: none;
   position: fixed;
@@ -248,36 +249,3 @@ body{
 #admin-popup button#close-popup{
   background: #6b7280;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
