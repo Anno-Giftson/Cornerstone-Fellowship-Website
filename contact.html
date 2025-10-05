@@ -9,15 +9,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html"><img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" /></a>
+      <a href="index.html">
+        <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
+      </a>
       <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <button class="nav-toggle">Menu</button>
         <ul id="nav-list" class="nav-list">
           <li><a href="index.html">Welcome</a></li>
           <li><a href="who-we-are.html">Who We Are</a></li>
@@ -44,8 +46,7 @@
             height="450" 
             style="border:0;" 
             allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
+            loading="lazy">
           </iframe>
         </div>
 
@@ -58,7 +59,7 @@
       </div>
     </section>
 
-    <!-- Admin Button (Invisible trigger) -->
+    <!-- Invisible Admin Button -->
     <button id="admin-btn"></button>
 
     <!-- Admin Popup -->
@@ -83,11 +84,10 @@
   </footer>
 
   <!-- JS -->
- <button id="logout-btn">Log Out</button>
- <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
