@@ -2,91 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cornerstone Delaware Tamil Prayer Fellowship — Contact Us</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cornerstone Delaware Tamil Prayer Fellowship — Welcome</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Center the embedded calendar */
+    .calendar-container {
+      width: 100%;
+      max-width: 800px;  /* limits calendar width */
+      margin: 2rem auto; /* centers horizontally */
+    }
+
+    .calendar-container iframe {
+      width: 100%;
+      height: 600px;
+      display: block; /* ensures proper centering */
+      border: 0;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html">
-        <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
-      </a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <button class="nav-toggle">Menu</button>
-        <ul id="nav-list" class="nav-list">
-          <li><a href="index.html">Welcome</a></li>
-          <li><a href="who-we-are.html">Who We Are</a></li>
-          <li><a href="what-we-believe.html">What We Believe</a></li>
-          <li><a href="giving.html">Giving</a></li>
-          <li><a href="contact.html" class="active">Contact Us</a></li>
-          <li><a href="admin.html" id="nav-admin" class="hidden">Admin</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+ <header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html">
+      <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
+    </a>
 
-  <!-- Main Content -->
-  <main class="site-main">
+    <nav class="main-nav" aria-label="Main navigation">
+      <ul id="nav-list" class="nav-list">
+        <li><a href="index.html" class="active">Welcome</a></li>
+        <li><a href="who-we-are.html">Who We Are</a></li>
+        <li><a href="what-we-believe.html">What We Believe</a></li>
+        <li><a href="giving.html">Giving</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  
+  <main id="main" class="site-main">
     <section class="hero">
       <div class="container hero-inner">
-        <h1 class="hero-title">Contact Us</h1>
-
-        <!-- Google Map -->
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.849579981309!2d-75.59328298462356!3d39.67887677943752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6e7b1c022d7c5%3A0xa89b2c22a1920c5!2s140%20Airport%20Rd%2C%20New%20Castle%2C%20DE%2019720!5e0!3m2!1sen!2sus!4v1695837190000!5m2!1sen!2sus" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-
-        <p class="contact-content">
-          Cornerstone Delaware Tamil Prayer Fellowship<br>
-          140 Airport Road, New Castle, DE 19720<br>
-          Ph: (484) 744-6219<br>
-          Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a>
+        <h1 class="hero-title">Welcome to Cornerstone Delaware Tamil Prayer Fellowship</h1>
+        <p class="hero-sub">
+          We are a Bible-believing, non-denominational church located in New Castle, Delaware. We welcome you to our community of worshiping and witnessing believers who love the Lord Jesus Christ!
         </p>
+        <p class="hero-note">See calendar below for services and other events</p>
       </div>
     </section>
 
-    <!-- Invisible Admin Button -->
-    <button id="admin-btn"></button>
+    <section class="info-strip">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Timings</h3>
+            <p>
+              Bilingual Service:<br>
+              Every Third Saturday from 3:30pm to 6:00pm
+            </p>
+          </div>
 
-    <!-- Admin Popup -->
-    <div id="admin-popup">
-      <h2>Admin Login</h2>
-      <form id="admin-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-        <button type="submit">Login</button>
-        <button type="button" id="close-popup">Cancel</button>
-      </form>
-    </div>
+          <div class="info-card">
+            <h3>Location</h3>
+            <p>140 Airport Road, New Castle, DE 19720</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Calendar</h3>
+            <p>See calendar below for services and other events</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Centered Google Calendar -->
+    <section class="calendar-section">
+      <div class="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=50b7932eabca194ea309e97f779e67e745ac72fc02b8a2d24100d8a795a7b4b4%40group.calendar.google.com&ctz=America%2FNew_York" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; <span id="year"></span> Cornerstone Delaware Tamil Prayer Fellowship</p>
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
+
 
 
 
