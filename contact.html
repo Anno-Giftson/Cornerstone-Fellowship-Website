@@ -38,40 +38,55 @@
 
   .map-container iframe {
     width: 100%;
+    border: 0;
+  }
+
+  /* Delaware campus bigger map and container */
+  .main-campus {
+    font-size: 1.1rem;
+    padding: 20px;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(12,18,30,0.04);
+    margin-bottom: 50px; /* space below Delaware campus */
+  }
+
+  .main-campus .map-container.large-map iframe {
+    height: 450px; /* taller rectangular map */
+    border-radius: var(--radius);
+  }
+
+  /* Row for PA and NJ campuses side by side */
+  .campus-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .campus-row .campus {
+    flex: 1;
+    min-width: 300px;
+    background: var(--card);
+    padding: 15px;
+    border-radius: var(--radius);
+    box-shadow: 0 6px 20px rgba(12,18,30,0.04);
+  }
+
+  /* Map sizing for PA and NJ campuses */
+  .campus-row .map-container iframe {
+    width: 100%;
     height: 300px;
     border: 0;
   }
 
-  /* Campus grid layout */
-  .campus-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    border-bottom: 1px solid rgba(15, 23, 36, 0.1);
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-  }
-
-  .campus {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .campus h2 {
-    color: var(--accent);
-    font-family: "Montserrat", sans-serif;
-    margin-top: 0;
-  }
-
-  .campus-divider {
-    border: none;
-    border-top: 1px solid rgba(15, 23, 36, 0.1);
-    margin: 40px 0;
-  }
-
+  /* Responsive stacking on small screens */
   @media (max-width: 900px) {
-    .campus-grid {
+    .campus-row {
       flex-direction: column;
+    }
+    .main-campus .map-container.large-map iframe {
+      height: 350px;
     }
   }
 </style>
