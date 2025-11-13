@@ -9,66 +9,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
-  <style>
-    /* Contact page adjustments */
-    .hero.contact-hero {
-      padding: 2rem 0; /* same as other pages */
-    }
-
-    .hero.contact-hero .hero-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* left-align like other pages */
-    }
-
-    .hero.contact-hero .hero-inner p {
-      margin: 0.5rem 0 0 0; /* small spacing for each line */
-    }
-
-    /* Map container spacing */
-    .map-container {
-      width: 100%;
-      margin: 1rem 0;
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-    .campus-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  border-bottom: 1px solid rgba(15, 23, 36, 0.1);
-  padding-bottom: 40px;
-  margin-bottom: 40px;
-}
-
-.campus {
-  flex: 1;
-  min-width: 300px;
-}
-
-.campus h2 {
-  color: var(--accent);
-  font-family: "Montserrat", sans-serif;
-  margin-top: 0;
-}
-
-.campus-divider {
-  border: none;
-  border-top: 1px solid rgba(15, 23, 36, 0.1);
-  margin: 40px 0;
-}
-
-@media (max-width: 900px) {
-  .campus-grid {
-    flex-direction: column;
+<style>
+  /* Contact page adjustments */
+  .hero.contact-hero {
+    padding: 2rem 0; /* same as other pages */
   }
-}
 
-  </style>
+  .hero.contact-hero .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left-align like other pages */
+  }
+
+  .hero.contact-hero .hero-inner p {
+    margin: 0.5rem 0 0 0; /* small spacing for each line */
+  }
+
+  /* Add spacing below the heading */
+  .hero.contact-hero .hero-title {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Map container spacing */
+  .map-container {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+
+  /* Campus grid layout */
+  .campus-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-bottom: 1px solid rgba(15, 23, 36, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+
+  .campus {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .campus h2 {
+    color: var(--accent);
+    font-family: "Montserrat", sans-serif;
+    margin-top: 0;
+  }
+
+  .campus-divider {
+    border: none;
+    border-top: 1px solid rgba(15, 23, 36, 0.1);
+    margin: 40px 0;
+  }
+
+  @media (max-width: 900px) {
+    .campus-grid {
+      flex-direction: column;
+    }
+  }
+</style>
+
   
 </head>
 <body>
