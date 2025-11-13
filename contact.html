@@ -36,7 +36,40 @@
       height: 300px;
       border: 0;
     }
+    .campus-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  border-bottom: 1px solid rgba(15, 23, 36, 0.1);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.campus {
+  flex: 1;
+  min-width: 300px;
+}
+
+.campus h2 {
+  color: var(--accent);
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0;
+}
+
+.campus-divider {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 36, 0.1);
+  margin: 40px 0;
+}
+
+@media (max-width: 900px) {
+  .campus-grid {
+    flex-direction: column;
+  }
+}
+
   </style>
+  
 </head>
 <body>
   <header class="site-header">
@@ -58,28 +91,69 @@
   </header>
 
 
-  <main id="main" class="site-main">
-    <section class="hero contact-hero">
-      <div class="container hero-inner">
-        <h1 class="hero-title">Contact Us</h1>
+<main id="main" class="site-main">
+  <section class="hero contact-hero">
+    <div class="container hero-inner">
+      <h1 class="hero-title">Contact Us</h1>
 
-        <!-- Google Map embed -->
+      <div class="campus-grid">
+        <!-- Delaware Campus -->
+        <div class="campus">
+          <h2>Delaware Campus</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.38736612378!2d-75.6126781846068!3d39.681437979449336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d0c123456789%3A0xabcdef1234567890!2s140%20Airport%20Rd%2C%20New%20Castle%2C%20DE%2019720!5e0!3m2!1sen!2sus!4v1695800000000"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p><strong>Cornerstone Delaware Tamil Prayer Fellowship</strong></p>
+          <p>140 Airport Road<br>New Castle, DE 19720</p>
+          <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+          <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
+        </div>
+
+        <!-- PA Campus -->
+        <div class="campus">
+          <h2>Pennsylvania Campus</h2>
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.8886752220855!2d-75.38670552347788!3d39.69259887156721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c7025d61f5c7b5%3A0xbdb5f6e7bdb5f6e7!2s520%20Pusey%20Mill%20Rd%2C%20Kennett%20Square%2C%20PA%2019348!5e0!3m2!1sen!2sus!4v1695800000001"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p><strong>Cornerstone Pennsylvania Tamil Prayer Fellowship</strong></p>
+          <p>520 Pusey Mill Road<br>Kennett Square, PA 19348</p>
+          <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+          <p>Email: <a href="mailto:cornerstonepa@gmail.com">cornerstonepa@gmail.com</a></p>
+        </div>
+      </div>
+
+      <hr class="campus-divider">
+
+      <!-- NJ Campus -->
+      <div class="campus single">
+        <h2>New Jersey Campus</h2>
         <div class="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.38736612378!2d-75.6126781846068!3d39.681437979449336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6d0c123456789%3A0xabcdef1234567890!2s140%20Airport%20Rd%2C%20New%20Castle%2C%20DE%2019720!5e0!3m2!1sen!2sus!4v1695800000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.5500000000!2d-74.150000000!3d40.700000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2500000000001%3A0xabcdefabcdefabcd!2sExample%20Church%20NJ!5e0!3m2!1sen!2sus!4v1695800000002"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
-
-        <p><strong>Cornerstone Delaware Tamil Prayer Fellowship</strong></p>
-        <p>140 Airport Road<br>New Castle, DE, 19720</p>
+        <p><strong>Cornerstone New Jersey Tamil Prayer Fellowship</strong></p>
+        <p>123 Example Street<br>Edison, NJ 08817</p>
         <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
-        <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
+        <p>Email: <a href="mailto:cornerstonenj@gmail.com">cornerstonenj@gmail.com</a></p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
+
 
   <footer class="site-footer">
     <div class="container">
