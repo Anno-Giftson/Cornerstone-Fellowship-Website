@@ -41,19 +41,18 @@
     border: 0;
   }
 
-  /* Delaware campus bigger map and container */
+  /* Delaware campus full-width and bigger */
   .main-campus {
-    font-size: 1.1rem;
-    padding: 20px;
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: 0 6px 20px rgba(12,18,30,0.04);
-    margin-bottom: 50px; /* space below Delaware campus */
+    font-size: 1.1rem;      /* slightly larger text */
+    padding: 20px 0;        /* top and bottom padding only */
+    margin-bottom: 50px;    /* space below Delaware campus */
   }
 
+  /* Larger rectangular map for Delaware */
   .main-campus .map-container.large-map iframe {
-    height: 450px; /* taller rectangular map */
-    border-radius: var(--radius);
+    height: 450px;          /* taller rectangular map */
+    width: 100%;            /* full width */
+    border-radius: 0;       /* remove rounded corners */
   }
 
   /* Row for PA and NJ campuses side by side */
@@ -90,6 +89,7 @@
     }
   }
 </style>
+
 
   
 </head>
