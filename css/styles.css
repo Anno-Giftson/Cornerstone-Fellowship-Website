@@ -189,66 +189,6 @@ body{
   .header-inner{padding:12px 0}
 }
 
-/* Admin Button */
-#admin-btn{
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 35px;
-  height: 35px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-/* Admin Popup */
-#admin-popup{
-  display: none; /* hidden by default */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--bg);
-  border-radius: 12px;
-  box-shadow: 0 8px 28px rgba(12,18,30,0.2);
-  padding: 30px;
-  max-width: 350px;
-  width: 90%;
-  z-index: 1002;
-}
-#admin-popup h2{
-  margin-top:0;
-  font-family: "Montserrat", sans-serif;
-  color: var(--accent);
-  text-align: center;
-}
-#admin-popup form{
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-#admin-popup label{
-  font-weight: 600;
-}
-#admin-popup input{
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-#admin-popup button{
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  background: var(--accent);
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-}
-#admin-popup button#close-popup{
-  background: #6b7280;
-  margin-top: 8px;
-}
 /* Fix text sizes, spacing, and card width on phones */
 @media (max-width: 480px) {
 
