@@ -263,6 +263,44 @@ body{
     display: flex;
   }
 }
+/* Desktop: show full menu, hide hamburger */
+.nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobile: show hamburger, hide menu until opened */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;            /* hide menu initially */
+    flex-direction: column;   /* vertical menu */
+    gap: 15px;
+    background: #fff;
+    padding: 10px;
+    position: absolute;       /* overlay below header */
+    right: 0;
+    top: 100%;
+    border: 1px solid rgba(12,18,30,0.04);
+    border-radius: 10px;
+    z-index: 1000;
+  }
+
+  .nav-list.show {
+    display: flex;            /* show menu when toggled */
+  }
+}
 
 
 
