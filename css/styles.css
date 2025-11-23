@@ -223,5 +223,38 @@ body{
   }
 }
 
+/* Desktop (default): show full menu, hide hamburger */
+.nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobile — show hamburger, hide menu until opened */
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 10px;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+}
 
 
