@@ -1,12 +1,23 @@
-// Mobile nav toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.querySelector('.nav-list');
-navToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
+// Ensure DOM is fully loaded before running script
+document.addEventListener("DOMContentLoaded", function() {
 
-// Set year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.querySelector('.nav-list');
+
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  }
+
+  // Set current year in footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+});
 
 
 
