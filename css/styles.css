@@ -223,7 +223,7 @@ body{
   }
 }
 
-/* Desktop (default): show full menu, hide hamburger */
+/* DESKTOP */
 .nav-toggle {
   display: none;
 }
@@ -233,12 +233,12 @@ body{
   gap: 20px;
 }
 
-/* Mobile — show hamburger, hide menu until opened */
-@media (max-width: 768px) {
+/* MOBILE */
+@media (max-width: 900px) {
 
   .nav-toggle {
     display: block;
-    font-size: 1.8rem;
+    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
@@ -248,13 +248,21 @@ body{
     display: none;
     flex-direction: column;
     gap: 15px;
-    background: #fff;
-    padding: 10px;
+    background: var(--bg);
+    padding: 15px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: 70px;  
+    right: 0;
+    z-index: 2000;
+    border: 1px solid rgba(0,0,0,0.1);
   }
 
   .nav-list.show {
     display: flex;
   }
 }
+
 
 
