@@ -250,7 +250,7 @@ body{
   }
 
   .nav-list {
-    gap: 10px;             /* reduces spacing between items */
+    gap: 30px;             /* reduces spacing between items */
   }
 }
 
