@@ -239,6 +239,20 @@ body{
   }
 }
 
+/* Make mobile menu look cleaner */
+@media (max-width: 900px) {
+
+  .nav-list a {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    white-space: nowrap;   /* prevents text from breaking into 2 lines */
+    padding: 10px 5px;
+  }
+
+  .nav-list {
+    gap: 10px;             /* reduces spacing between items */
+  }
+}
 
 
 
