@@ -172,21 +172,6 @@ body{
 @media (max-width:900px){
   #site-logo{height:90px !important}
   .info-grid{grid-template-columns:1fr}
-  .nav-toggle{display:inline-block}
-  .nav-list{
-    position:absolute;
-    right:0;
-    top:64px;
-    background:var(--bg);
-    border:1px solid rgba(12,18,30,0.04);
-    padding:10px;
-    border-radius:10px;
-    flex-direction:column;
-    display:none;
-    min-width:180px;
-  }
-  .nav-list.show{display:flex}
-  .header-inner{padding:12px 0}
 }
 
 /* Fix text sizes, spacing, and card width on phones */
@@ -223,17 +208,7 @@ body{
   }
 }
 
-/* DESKTOP */
-.nav-toggle {
-  display: none;
-}
-
-.nav-list {
-  display: flex;
-  gap: 20px;
-}
-
-/* MOBILE */
+/* FINAL MOBILE NAVIGATION (clean, correct, and only once) */
 @media (max-width: 900px) {
 
   .nav-toggle {
@@ -245,16 +220,16 @@ body{
   }
 
   .nav-list {
-    display: none;
-    flex-direction: column;
+    display: none;            
+    flex-direction: column;   
     gap: 15px;
     background: var(--bg);
     padding: 15px;
     border-radius: 10px;
 
-    position: absolute;
-    top: 70px;  
+    position: absolute;       
     right: 0;
+    top: 70px;  
     z-index: 2000;
     border: 1px solid rgba(0,0,0,0.1);
   }
@@ -263,44 +238,7 @@ body{
     display: flex;
   }
 }
-/* Desktop: show full menu, hide hamburger */
-.nav-toggle {
-  display: none;
-}
 
-.nav-list {
-  display: flex;
-  gap: 20px;
-}
-
-/* Mobile: show hamburger, hide menu until opened */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-list {
-    display: none;            /* hide menu initially */
-    flex-direction: column;   /* vertical menu */
-    gap: 15px;
-    background: #fff;
-    padding: 10px;
-    position: absolute;       /* overlay below header */
-    right: 0;
-    top: 100%;
-    border: 1px solid rgba(12,18,30,0.04);
-    border-radius: 10px;
-    z-index: 1000;
-  }
-
-  .nav-list.show {
-    display: flex;            /* show menu when toggled */
-  }
-}
 
 
 
