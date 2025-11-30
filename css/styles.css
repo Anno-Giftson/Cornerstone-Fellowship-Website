@@ -44,7 +44,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:20px 0;
-  overflow: visible; /* allows the X to show outside */
+  overflow: visible; /* ensures X is not cut off */
 }
 #site-logo{
   height:120px !important;
@@ -56,6 +56,8 @@ body{
 
 /* nav */
 .main-nav{position:relative}
+
+/* Hamburger button */
 .nav-toggle{
   display:none;
   background:none;
@@ -64,7 +66,12 @@ body{
   border-radius:8px;
   cursor:pointer;
   font-weight:600;
+
+  /* FIX for X visibility */
+  position: relative;
+  z-index: 99999;
 }
+
 .nav-list{
   list-style:none;
   margin:0;
@@ -189,16 +196,6 @@ body{
 /* FINAL MOBILE NAV: HAMBURGER + SLIDE-IN PANEL FROM RIGHT  */
 /* ========================================================= */
 
-/* Hamburger button */
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 6px;
-  z-index: 9999; /* stays above slide panel */
-}
-
 /* Hamburger bars */
 .nav-toggle .bar {
   display: block;
@@ -256,6 +253,7 @@ body{
     padding: 8px 4px;
   }
 }
+
 
 
 
