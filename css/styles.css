@@ -138,7 +138,7 @@ body{
 }
 
 /* info strip */
-.info-strip{padding:36px 0}
+.info-strip{padding:0 0}
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
