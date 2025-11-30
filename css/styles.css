@@ -44,7 +44,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:20px 0;
-  overflow: visible; /* ensures X isn't hidden */
+  overflow: visible; /* keeps the X visible over the slide panel */
 }
 #site-logo{
   height:120px !important;
@@ -57,45 +57,22 @@ body{
 /* nav */
 .main-nav{position:relative}
 .nav-toggle{
-  display:none; /* mobile only overridden below */
+  display:none;
   background:none;
   border:1px solid rgba(15,23,36,0.06);
   padding:8px 12px;
   border-radius:8px;
   cursor:pointer;
   font-weight:600;
-  position: fixed;  /* keep visible */
-  top: 40px;       /* lower from top */
-  right: 20px;
-  z-index: 3000;    /* above slide panel */
+  z-index: 3000; /* always above slide panel */
 }
-.nav-toggle .bar{
-  display: block;
-  width: 28px;
-  height: 3px;
-  margin: 6px 0;
-  background: #0f172a;
-  border-radius: 2px;
-  transition: 0.3s ease;
-}
-.nav-toggle.open .bar:nth-child(1){
-  transform: translateY(9px) rotate(45deg);
-}
-.nav-toggle.open .bar:nth-child(2){
-  opacity: 0;
-}
-.nav-toggle.open .bar:nth-child(3){
-  transform: translateY(-9px) rotate(-45deg);
-}
-
 .nav-list{
   list-style:none;
   margin:0;
-  padding:40px 30px;
+  padding:0;
   display:flex;
   gap:18px;
   align-items:center;
-  flex-direction: row;
 }
 .nav-list a{
   text-decoration:none;
@@ -116,7 +93,7 @@ body{
 .hero{
   padding:80px 0;
 }
-.hero-inner{max-width:900px}
+.hero-inner{max-width:900px; margin-bottom:0; padding-bottom:0;} /* tighter spacing */
 .hero-title{
   font-family:"Montserrat",sans-serif;
   font-size:clamp(28px, 4vw, 44px);
@@ -133,12 +110,11 @@ body{
 .hero-note{
   color:var(--muted);
   font-size:.95rem;
-  margin-top:6px;
-  margin-bottom:1px;
+  margin-top:1px; /* minimal spacing */
 }
 
 /* info strip */
-.info-strip{padding:1px 0}
+.info-strip{padding:20px 0} /* reduced from 36px */
 .info-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -213,7 +189,42 @@ body{
 /* ========================================================= */
 /* FINAL MOBILE NAV: HAMBURGER + SLIDE-IN PANEL FROM RIGHT  */
 /* ========================================================= */
-@media (max-width: 900px){
+
+/* Hamburger button */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+  z-index: 3000; /* always above slide panel */
+}
+
+/* Hamburger bars */
+.nav-toggle .bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 6px 0;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Hamburger → X animation */
+.nav-toggle.open .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Slide-in nav panel */
+@media (max-width: 900px) {
+
   .nav-toggle {
     display: block;
   }
@@ -221,10 +232,10 @@ body{
   .nav-list {
     list-style: none;
     margin: 0;
-    padding: 130px 30px 30px 30px; /* pushes buttons lower */
+    padding: 40px 30px;
     position: fixed;
     top: 0;
-    right: -260px; /* off screen */
+    right: -260px; /* Off screen */
     width: 260px;
     height: 100%;
     background: white;
@@ -232,7 +243,7 @@ body{
     gap: 20px;
     box-shadow: -4px 0 12px rgba(0,0,0,0.1);
     transition: right 0.35s ease;
-    z-index: 2500; /* under toggle */
+    z-index: 2000; /* under toggle */
   }
 
   .nav-list.show {
@@ -246,6 +257,7 @@ body{
     padding: 8px 4px;
   }
 }
+
 
 
 
