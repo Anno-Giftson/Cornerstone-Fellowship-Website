@@ -44,6 +44,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:20px 0;
+  overflow: visible; /* allows the X to show outside */
 }
 #site-logo{
   height:120px !important;
