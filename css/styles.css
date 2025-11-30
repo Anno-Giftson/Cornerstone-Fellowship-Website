@@ -220,7 +220,7 @@ body{
   .nav-list {
     list-style: none;
     margin: 0;
-    padding: 100px 30px 30px 30px; /* pushes buttons lower */
+    padding: 130px 30px 30px 30px; /* pushes buttons lower */
     position: fixed;
     top: 0;
     right: -260px; /* off screen */
