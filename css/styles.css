@@ -184,19 +184,21 @@ body{
   .logo { font-size: 1.2rem; }
 }
 
-/* REMOVE the old mobile nav block — replaced by final slide-in version */
-/* (No longer here) */
+/* ========================================================= */
+/* FINAL MOBILE NAV: HAMBURGER + SLIDE-IN PANEL FROM RIGHT  */
+/* ========================================================= */
 
-/* HAMBURGER ICON */
+/* Hamburger button */
 .nav-toggle {
   display: none;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 8px;
-  z-index: 9999;  /* keep X above panel */
+  padding: 6px;
+  z-index: 9999; /* stays above slide panel */
 }
 
+/* Hamburger bars */
 .nav-toggle .bar {
   display: block;
   width: 28px;
@@ -207,7 +209,7 @@ body{
   transition: 0.3s ease;
 }
 
-/* When menu is OPEN — turn hamburger into X */
+/* Hamburger → X animation */
 .nav-toggle.open .bar:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -218,7 +220,7 @@ body{
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* FINAL MOBILE NAV — slide in from right */
+/* Slide-in nav panel */
 @media (max-width: 900px) {
 
   .nav-toggle {
@@ -231,7 +233,7 @@ body{
     padding: 40px 30px;
     position: fixed;
     top: 0;
-    right: -260px;     /* hidden off screen */
+    right: -260px; /* Off screen */
     width: 260px;
     height: 100%;
     background: white;
@@ -239,11 +241,11 @@ body{
     gap: 20px;
     box-shadow: -4px 0 12px rgba(0,0,0,0.1);
     transition: right 0.35s ease;
-    z-index: 2500;
+    z-index: 2500; /* under toggle */
   }
 
   .nav-list.show {
-    right: 0;         /* slide in */
+    right: 0; /* slide in */
   }
 
   .nav-list a {
@@ -253,6 +255,7 @@ body{
     padding: 8px 4px;
   }
 }
+
 
 
 
