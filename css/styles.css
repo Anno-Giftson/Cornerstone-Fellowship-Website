@@ -44,7 +44,7 @@ body{
   align-items:center;
   justify-content:space-between;
   padding:20px 0;
-  overflow: visible; /* ensures X animation is visible */
+  overflow: visible; /* ensures X isn't hidden */
 }
 #site-logo{
   height:120px !important;
@@ -56,22 +56,20 @@ body{
 
 /* nav */
 .main-nav{position:relative}
-
-/* Hamburger button */
-.nav-toggle {
-  display: none; /* visible only on mobile via media query */
-  position: fixed;  /* keeps button in view */
-  top: 20px;
+.nav-toggle{
+  display:none; /* mobile only overridden below */
+  background:none;
+  border:1px solid rgba(15,23,36,0.06);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  position: fixed;  /* keep visible */
+  top: 40px;       /* lower from top */
   right: 20px;
-  z-index: 3000;   /* above slide panel */
-  background: none;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
+  z-index: 3000;    /* above slide panel */
 }
-
-/* Hamburger bars */
-.nav-toggle .bar {
+.nav-toggle .bar{
   display: block;
   width: 28px;
   height: 3px;
@@ -80,56 +78,38 @@ body{
   border-radius: 2px;
   transition: 0.3s ease;
 }
-
-/* Hamburger → X animation */
-.nav-toggle.open .bar:nth-child(1) {
+.nav-toggle.open .bar:nth-child(1){
   transform: translateY(9px) rotate(45deg);
 }
-.nav-toggle.open .bar:nth-child(2) {
+.nav-toggle.open .bar:nth-child(2){
   opacity: 0;
 }
-.nav-toggle.open .bar:nth-child(3) {
+.nav-toggle.open .bar:nth-child(3){
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Slide-in nav panel */
-.nav-list {
-  list-style: none;
-  margin: 0;
-  padding: 40px 30px;
-  position: fixed;
-  top: 0;
-  right: -260px; /* hidden off screen initially */
-  width: 260px;
-  height: 100%;
-  background: white;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: -4px 0 12px rgba(0,0,0,0.1);
-  transition: right 0.35s ease;
-  z-index: 2500; /* below toggle */
+.nav-list{
+  list-style:none;
+  margin:0;
+  padding:40px 30px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-direction: row;
 }
-
-.nav-list.show {
-  right: 0; /* slide in */
+.nav-list a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+  letter-spacing:0.02em;
+  padding:8px 12px;
+  border-radius:8px;
+  transition:all .25s var(--ease);
 }
-
-.nav-list a {
-  white-space: nowrap;
-  font-size: 1.2rem;
-  line-height: 1.3;
-  padding: 8px 4px;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all .25s var(--ease);
-}
-
 .nav-list a:hover,
-.nav-list a.active {
-  color: var(--accent);
-  background: rgba(11,59,102,0.04);
+.nav-list a.active{
+  color:var(--accent);
+  background:rgba(11,59,102,0.04);
 }
 
 /* hero */
@@ -229,12 +209,43 @@ body{
   .logo { font-size: 1.2rem; }
 }
 
-/* Mobile nav adjustments */
+/* ========================================================= */
+/* FINAL MOBILE NAV: HAMBURGER + SLIDE-IN PANEL FROM RIGHT  */
+/* ========================================================= */
 @media (max-width: 900px){
   .nav-toggle {
     display: block;
   }
+
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 100px 30px 30px 30px; /* pushes buttons lower */
+    position: fixed;
+    top: 0;
+    right: -260px; /* off screen */
+    width: 260px;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: -4px 0 12px rgba(0,0,0,0.1);
+    transition: right 0.35s ease;
+    z-index: 2500; /* under toggle */
+  }
+
+  .nav-list.show {
+    right: 0; /* slide in */
+  }
+
+  .nav-list a {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    padding: 8px 4px;
+  }
 }
+
 
 
 
