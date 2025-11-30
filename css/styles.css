@@ -174,85 +174,18 @@ body{
   .info-grid{grid-template-columns:1fr}
 }
 
-/* Fix text sizes, spacing, and card width on phones */
+/* Fix text sizes on phones */
 @media (max-width: 480px) {
-
-  h1 {
-    font-size: 1.6rem;
-    margin-top: 25px;
-  }
-
-  p {
-    font-size: 0.95rem;
-    padding: 0 15px;
-  }
-
-  .info-card {
-    width: 92%;
-    padding: 20px;
-  }
-
-  iframe {
-    width: 92%;
-    height: 300px;
-  }
-
-  /* Fix popup width */
-  #admin-popup {
-    width: 85%;
-  }
-
-  /* Make the logo easier to tap */
-  .logo {
-    font-size: 1.2rem;
-  }
+  h1 { font-size: 1.6rem; margin-top: 25px; }
+  p { font-size: 0.95rem; padding: 0 15px; }
+  .info-card { width: 92%; padding: 20px; }
+  iframe { width: 92%; height: 300px; }
+  #admin-popup { width: 85%; }
+  .logo { font-size: 1.2rem; }
 }
 
-/* FINAL MOBILE NAVIGATION (clean, correct, and only once) */
-@media (max-width: 900px) {
-
-  .nav-toggle {
-    display: block;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .nav-list {
-    display: none;            
-    flex-direction: column;   
-    gap: 15px;
-    background: var(--bg);
-    padding: 15px;
-    border-radius: 10px;
-
-    position: absolute;       
-    right: 0;
-    top: 70px;  
-    z-index: 2000;
-    border: 1px solid rgba(0,0,0,0.1);
-  }
-
-  .nav-list.show {
-    display: flex;
-  }
-}
-
-/* Make mobile menu look cleaner */
-@media (max-width: 900px) {
-
-  .nav-list a {
-    font-size: 1.2rem;
-    line-height: 1.3;
-    white-space: nowrap;   /* prevents text from breaking into 2 lines */
-    padding: 10px 5px;
-  }
-
-  .nav-list {
-    gap: 15px;             /* reduces spacing between items */
-  }
-}
+/* REMOVE the old mobile nav block — replaced by final slide-in version */
+/* (No longer here) */
 
 /* HAMBURGER ICON */
 .nav-toggle {
@@ -261,7 +194,7 @@ body{
   background: none;
   border: none;
   padding: 8px;
-  z-index: 3000;
+  z-index: 9999;  /* keep X above panel */
 }
 
 .nav-toggle .bar {
@@ -285,7 +218,7 @@ body{
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* MOBILE NAV */
+/* FINAL MOBILE NAV — slide in from right */
 @media (max-width: 900px) {
 
   .nav-toggle {
@@ -298,7 +231,7 @@ body{
     padding: 40px 30px;
     position: fixed;
     top: 0;
-    right: -260px;       /* HIDDEN OFF SCREEN */
+    right: -260px;     /* hidden off screen */
     width: 260px;
     height: 100%;
     background: white;
@@ -309,12 +242,10 @@ body{
     z-index: 2500;
   }
 
-  /* When menu is open — slide in */
   .nav-list.show {
-    right: 0;
+    right: 0;         /* slide in */
   }
 
-  /* Clean single-line items */
   .nav-list a {
     white-space: nowrap;
     font-size: 1.2rem;
@@ -322,5 +253,6 @@ body{
     padding: 8px 4px;
   }
 }
+
 
 
