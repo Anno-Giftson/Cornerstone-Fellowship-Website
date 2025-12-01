@@ -143,6 +143,7 @@ body{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
+  margin-top:0;
 }
 .info-card{
   background:var(--card);
