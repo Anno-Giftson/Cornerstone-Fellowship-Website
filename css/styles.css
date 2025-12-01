@@ -137,6 +137,12 @@ body{
   margin-bottom:0;
 }
 
+/* Contact page hero fix */
+.contact-hero .hero-title {
+  margin-top: -20px;   /* move title upward */
+}
+
+
 /* info strip */
 .info-strip{padding:0 0 0 0}
 .info-grid{
