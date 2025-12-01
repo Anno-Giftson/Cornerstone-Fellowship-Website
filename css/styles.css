@@ -133,7 +133,7 @@ body{
 .hero-note{
   color:var(--muted);
   font-size:.95rem;
-  margin-top:-20;
+  margin-top:-20px;
   margin-bottom:0;
 }
 
