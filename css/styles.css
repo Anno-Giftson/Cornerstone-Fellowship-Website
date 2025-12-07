@@ -268,6 +268,33 @@ body{
     text-decoration: none;
 }
 
+/* Fix header layout */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Make nav horizontal */
+.header-nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make links look correct */
+.header-nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #4a2d82; /* Purple (your site’s color) */
+}
+
+/* Highlight active page */
+.header-nav ul li a.active {
+    text-decoration: underline;
+}
 
 
 
