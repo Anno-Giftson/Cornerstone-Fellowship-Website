@@ -1,7 +1,7 @@
 // --------------------------------------
 // YouTube API Setup
 // --------------------------------------
-const apiKey = "YOUR_API_KEY_HERE";   // <--- replace this only
+const apiKey = "AIzaSyC9UenC1YOYmvcmYpMSuegOzQur_jaQoew";   // <--- replace this only
 const channelId = "UCwxiilmw1w9xKjIU35hsmOQ";
 
 // Pulls the latest 12 videos from the Uploads playlist
