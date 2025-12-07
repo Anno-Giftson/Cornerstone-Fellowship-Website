@@ -254,6 +254,19 @@ body{
   }
 }
 
+.header-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav li {
+    margin: 0 0 6px 0;
+}
+
+.header-nav a {
+    text-decoration: none;
+}
 
 
 
