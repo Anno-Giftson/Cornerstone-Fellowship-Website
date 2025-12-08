@@ -296,6 +296,20 @@ body{
     text-decoration: underline;
 }
 
+.site-header .container,
+.header-inner {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Disable animation during state restore */
+.nav-list.no-animate {
+    transition: none !important;
+}
+
+.nav-toggle.no-animate .bar {
+    transition: none !important;
+}
 
 
 
