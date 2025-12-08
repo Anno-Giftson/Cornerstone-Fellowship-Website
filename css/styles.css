@@ -318,23 +318,5 @@ html, body {
   overflow-x: hidden !important;
 }
 
-/* ------------------------------ */
-/* Fix double scrollbar on all pages */
-/* ------------------------------ */
-html, body {
-    overflow-x: hidden; /* prevent horizontal overflow */
-}
-
-/* Ensure fixed mobile nav does not create extra width */
-.nav-list {
-    max-width: 260px; /* panel width */
-    right: -260px;    /* offscreen when closed */
-}
-
-.nav-list.show {
-    right: 0;
-    max-width: 100%;  /* never exceed viewport */
-}
-
 
 
