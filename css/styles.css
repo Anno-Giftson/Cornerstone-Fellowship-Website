@@ -310,6 +310,9 @@ body {
     overflow-x: hidden;
 }
 
+html {
+  overflow-y: scroll;
+}
 
 
 
