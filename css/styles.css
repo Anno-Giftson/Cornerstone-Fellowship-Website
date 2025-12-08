@@ -305,6 +305,10 @@ body{
     transition: none !important;
 }
 
+/* Prevent horizontal shifting on pages with iframes (like Giving) */
+body {
+    overflow-x: hidden;
+}
 
 
 
