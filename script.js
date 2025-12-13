@@ -3,6 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');
+  const links = document.querySelectorAll(".nav-list a");
+
+links.forEach(link => {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();          // stop immediate navigation
+    navList.classList.remove("show");  // slide out
+    navToggle.classList.remove("open"); // animate X → hamburger
+
+    const href = this.getAttribute("href");
+
+    setTimeout(() => {
+      window.location.href = href;  // navigate after animation
+    }, 1000);
+  });
+});
+
 
   // Restore previous menu state WITHOUT triggering animations
   const wasOpen = localStorage.getItem("menuOpen") === "true";
