@@ -14,7 +14,7 @@ links.forEach(link => {
     const href = this.getAttribute("href");
     setTimeout(function() {
         window.location.href = href;
-    }, 300);  // wait for slide-out animation
+    }, 150);  // wait for slide-out animation
   });
 });
 
