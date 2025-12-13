@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
     navToggle.classList.toggle('open');
 
     // Save menu state
-    const isOpen = navList.classList.contains("show");
-    localStorage.setItem("menuOpen", isOpen);
+    const isOpen = navList.classList.contains("hide");
+    localStorage.setItem("menuOpen", isClose);
   });
 
   // Set current year
