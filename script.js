@@ -7,15 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 links.forEach(link => {
   link.addEventListener("click", function(event) {
-    event.preventDefault();          // stop immediate navigation
-    navList.classList.remove("show");  // slide out
-    navToggle.classList.remove("open"); // animate X → hamburger
+    event.preventDefault();          
+    navList.classList.remove("show");  
+    localStorage.setItem("menuOpen", false);
 
     const href = this.getAttribute("href");
-
-    setTimeout(() => {
-      window.location.href = href;  // navigate after animation
-    }, 1000);
+    setTimeout(function() {
+        window.location.href = href;
+    }, 500);  // wait for slide-out animation
   });
 });
 
