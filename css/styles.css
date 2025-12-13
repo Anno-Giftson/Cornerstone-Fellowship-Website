@@ -296,7 +296,10 @@ body{
     text-decoration: underline;
 }
 
-
+/* Disable animation during state restore */
+.nav-list.no-animate {
+    transition: none !important;
+}
 
 .nav-toggle.no-animate .bar {
     transition: none !important;
