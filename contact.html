@@ -12,68 +12,58 @@
 <style>
 /* Contact page adjustments */
 .hero.contact-hero {
-padding: 2rem 0; /* same as other pages */
+  padding: 2rem 0;
 }
 
 .hero.contact-hero .hero-inner {
-display: flex;
-flex-direction: column;
-align-items: flex-start; /* left-align like other pages */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero.contact-hero .hero-inner p {
-margin: 0.5rem 0 0 0; /* small spacing for each line */
+  margin: 0.5rem 0 0 0;
 }
 
-/* Add spacing below the heading */
 .hero.contact-hero .hero-title {
-    margin-bottom: 1.5rem;
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
-/* Map container spacing */
 .map-container {
-width: 100%;
-margin: 1rem 0;
+  width: 100%;
+  margin: 1rem 0;
 }
 
-.map-container iframe {
-width: 100%;
-height: 300px;
-border: 0;
-}
-
-/* Campus grid layout */
 .campus-grid {
-display: flex;
-flex-wrap: wrap;
-gap: 40px;
-border-bottom: 1px solid rgba(15, 23, 36, 0.1);
-padding-bottom: 40px;
-margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  border-bottom: 1px solid rgba(15, 23, 36, 0.1);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .campus {
-flex: 1;
-min-width: 300px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .campus h2 {
-color: var(--accent);
-font-family: "Montserrat", sans-serif;
-margin-top: 0;
+  color: var(--accent);
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0;
 }
 
 .campus-divider {
-border: none;
-border-top: 1px solid rgba(15, 23, 36, 0.1);
-margin: 40px 0;
+  border: none;
+  border-top: 1px solid rgba(15, 23, 36, 0.1);
+  margin: 40px 0;
 }
 
 @media (max-width: 900px) {
-.campus-grid {
-flex-direction: column;
-}
+  .campus-grid {
+    flex-direction: column;
+  }
 }
 </style>
 
@@ -101,7 +91,6 @@ flex-direction: column;
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
 </nav>
-
 </div>
 </header>
 
@@ -111,6 +100,7 @@ flex-direction: column;
 <h1 class="hero-title">Contact Us</h1>
 
 <div class="campus-grid">
+
 <!-- Delaware Campus -->
 <div class="campus">
 <h2>Delaware Campus</h2>
@@ -148,6 +138,7 @@ flex-direction: column;
 <p>Ph: <a href="tel:+16099025981">(609) 902-5981</a></p>
 <p>Website: <a href="https://www.csfnj.com" target="_blank">www.csfnj.com</a></p>
 </div>
+
 </div>
 </section>
 </main>
@@ -158,6 +149,7 @@ flex-direction: column;
 </div>
 </footer>
 
+<!-- Put your actual API key here -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUjyViF7ZFvxMyGaulxJraE05IwvoDcxA"></script>
 <script src="script.js"></script>
 <script>
@@ -165,5 +157,6 @@ flex-direction: column;
 </script>
 </body>
 </html>
+
 
 
