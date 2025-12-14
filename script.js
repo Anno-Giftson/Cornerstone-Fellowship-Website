@@ -40,15 +40,25 @@ document.addEventListener("DOMContentLoaded", function () {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // --- Maps fallback (embed if API not available) ---
+  // --- Maps fallback ---
+  const campusLocations = {
+    'delaware-map': { lat: 39.6814379, lng: -75.6126781 },
+    'pa-map': { lat: 40.1190346, lng: -75.4250808 },
+    'nj-map': { lat: 40.383, lng: -74.54 }
+  };
+
   function loadMap(apiDivId) {
     const container = document.getElementById(apiDivId).parentElement;
     const embedUrl = container.dataset.embed;
 
+    const div = document.getElementById(apiDivId);
+    div.style.width = "100%";
+    div.style.height = "300px";
+
     if (window.google && window.google.maps) {
       try {
-        new google.maps.Map(document.getElementById(apiDivId), {
-          center: { lat: 0, lng: 0 },
+        new google.maps.Map(div, {
+          center: campusLocations[apiDivId],
           zoom: 15
         });
       } catch (err) {
@@ -64,5 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
   loadMap('nj-map');
 
 });
+
 
 
