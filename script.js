@@ -1,10 +1,10 @@
-// Ensure DOM is fully loaded before running script
 document.addEventListener("DOMContentLoaded", function () {
 
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');
   const links = document.querySelectorAll(".nav-list a");
 
+  // Hamburger menu links
   links.forEach(link => {
     link.addEventListener("click", function(event) {
       event.preventDefault();          
@@ -14,61 +14,55 @@ document.addEventListener("DOMContentLoaded", function () {
       const href = this.getAttribute("href");
       setTimeout(function() {
           window.location.href = href;
-      }, 300);  // wait for slide-out animation
+      }, 300);
     });
   });
 
-  // Restore previous menu state WITHOUT triggering animations
+  // Restore menu state
   const wasOpen = localStorage.getItem("menuOpen") === "true";
-
   if (wasOpen) {
     navList.classList.add("show", "no-animate");
     navToggle.classList.add("open", "no-animate");
-
-    // Remove the no-animate class so future clicks animate normally
     setTimeout(() => {
       navList.classList.remove("no-animate");
       navToggle.classList.remove("no-animate");
     }, 50);
   }
 
-  // Toggle menu open/close
+  // Toggle menu
   navToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
     navToggle.classList.toggle('open');
-
-    // Save menu state
-    const isOpen = navList.classList.contains("show");
-    localStorage.setItem("menuOpen", isOpen);
+    localStorage.setItem("menuOpen", navList.classList.contains("show"));
   });
 
-  // Set current year
+  // Current year
   const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // --- Google Maps fallback logic ---
-  function loadMap(apiDivId, lat, lng, zoom, embedUrl) {
-    const apiDiv = document.getElementById(apiDivId);
-    
-    if (typeof google !== "undefined" && google.maps) {
-      // Google Maps API loaded successfully
-      new google.maps.Map(apiDiv, {
-        center: { lat, lng },
-        zoom: zoom
-      });
+  // --- Maps fallback (embed if API not available) ---
+  function loadMap(apiDivId) {
+    const container = document.getElementById(apiDivId).parentElement;
+    const embedUrl = container.dataset.embed;
+
+    if (window.google && window.google.maps) {
+      try {
+        new google.maps.Map(document.getElementById(apiDivId), {
+          center: { lat: 0, lng: 0 },
+          zoom: 15
+        });
+      } catch (err) {
+        container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+      }
     } else {
-      // Fallback to iframe if API fails
-      const wrapper = apiDiv.parentElement;
-      wrapper.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-      console.log(`API failed for ${apiDivId}, using embed fallback`);
+      container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
     }
   }
 
-  loadMap('delaware-map', 39.6814379, -75.6126781, 15, document.querySelector('#delaware-map').parentElement.dataset.embed);
-  loadMap('pa-map', 40.1190346, -75.4250808, 15, document.querySelector('#pa-map').parentElement.dataset.embed);
-  loadMap('nj-map', 40.383, -74.54, 15, document.querySelector('#nj-map').parentElement.dataset.embed);
+  loadMap('delaware-map');
+  loadMap('pa-map');
+  loadMap('nj-map');
 
 });
+
 
