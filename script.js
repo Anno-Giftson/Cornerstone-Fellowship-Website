@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem("menuOpen", false);
 
       const href = this.getAttribute("href");
-      setTimeout(function() {
-          window.location.href = href;
-      }, 300);
+      setTimeout(() => window.location.href = href, 300);
     });
   });
 
@@ -40,27 +38,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // --- Maps fallback ---
-  const campusLocations = {
-    'delaware-map': { lat: 39.6814379, lng: -75.6126781 },
-    'pa-map': { lat: 40.1190346, lng: -75.4250808 },
-    'nj-map': { lat: 40.383, lng: -74.54 }
-  };
-
+  // --- Maps fallback (embed if API not available or key invalid) ---
   function loadMap(apiDivId) {
     const container = document.getElementById(apiDivId).parentElement;
     const embedUrl = container.dataset.embed;
 
-    const div = document.getElementById(apiDivId);
-    div.style.width = "100%";
-    div.style.height = "300px";
-
     if (window.google && window.google.maps) {
       try {
-        new google.maps.Map(div, {
-          center: campusLocations[apiDivId],
+        const map = new google.maps.Map(document.getElementById(apiDivId), {
+          center: { lat: 0, lng: 0 },
           zoom: 15
         });
+
+        // Check if map rendered; if not, fallback to iframe
+        setTimeout(() => {
+          const mapDiv = document.getElementById(apiDivId);
+          // If no canvas or image rendered inside, assume API failed
+          if (!mapDiv.querySelector("canvas") && !mapDiv.querySelector("img")) {
+            container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+          }
+        }, 1000);
+
       } catch (err) {
         container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
       }
@@ -69,11 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Load all campus maps
   loadMap('delaware-map');
   loadMap('pa-map');
   loadMap('nj-map');
 
 });
+
 
 
 
