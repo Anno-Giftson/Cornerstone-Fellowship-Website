@@ -12,28 +12,37 @@
 <style>
 /* Contact page adjustments */
 .hero.contact-hero {
-  padding: 2rem 0;
+  padding: 2rem 0; /* same as other pages */
 }
 
 .hero.contact-hero .hero-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* left-align like other pages */
 }
 
 .hero.contact-hero .hero-inner p {
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0 0; /* small spacing for each line */
 }
 
+/* Add spacing below the heading */
 .hero.contact-hero .hero-title {
   margin-bottom: 3rem;
 }
 
+/* Map container spacing */
 .map-container {
   width: 100%;
   margin: 1rem 0;
 }
 
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* Campus grid layout */
 .campus-grid {
   display: flex;
   flex-wrap: wrap;
