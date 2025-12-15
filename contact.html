@@ -159,7 +159,11 @@
 </footer>
 
 <!-- Put your actual API key here -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUjyViF7ZFvxMyGaulxJraE05IwvoDcxA"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUjyViF7ZFvxMyGaulxJraE05IwvoDcxA&callback=initMaps"
+  defer>
+</script>
+
 <script src="script.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
