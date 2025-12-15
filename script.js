@@ -1,6 +1,7 @@
-// Hamburger menu and year stuff
-document.addEventListener("DOMContentLoaded", function () {
+// script.js
 
+// Hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');
   const links = document.querySelectorAll(".nav-list a");
@@ -10,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();          
       navList.classList.remove("show");  
       localStorage.setItem("menuOpen", false);
-
       const href = this.getAttribute("href");
       setTimeout(() => window.location.href = href, 300);
     });
@@ -34,10 +34,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+});
 
-}); // <-- end of DOMContentLoaded
-
-// --- Make these global for Google Maps ---
+// --- Google Maps ---
 function loadCampusMap(mapId, coords, title) {
   const mapDiv = document.getElementById(mapId);
   const container = mapDiv.parentElement;
@@ -45,22 +44,10 @@ function loadCampusMap(mapId, coords, title) {
 
   if (window.google && window.google.maps) {
     try {
-      const map = new google.maps.Map(mapDiv, {
-        center: coords,
-        zoom: 15
-      });
-
-      const marker = new google.maps.Marker({
-        position: coords,
-        map: map
-      });
-
-      const infoWindow = new google.maps.InfoWindow({
-        content: `<strong>${title}</strong>`
-      });
-
+      const map = new google.maps.Map(mapDiv, { center: coords, zoom: 15 });
+      const marker = new google.maps.Marker({ position: coords, map: map });
+      const infoWindow = new google.maps.InfoWindow({ content: `<strong>${title}</strong>` });
       infoWindow.open(map, marker);
-
     } catch (e) {
       container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
     }
@@ -69,25 +56,13 @@ function loadCampusMap(mapId, coords, title) {
   }
 }
 
+// Called by Google Maps API
 function initMaps() {
-  loadCampusMap(
-    "delaware-map",
-    { lat: 39.681437979449336, lng: -75.6126781846068 },
-    "Cornerstone DE"
-  );
-
-  loadCampusMap(
-    "pa-map",
-    { lat: 40.1190346, lng: -75.4250808 },
-    "Cornerstone PA"
-  );
-
-  loadCampusMap(
-    "nj-map",
-    { lat: 40.383, lng: -74.54 },
-    "Cornerstone NJ"
-  );
+  loadCampusMap("delaware-map", { lat: 39.681437979449336, lng: -75.6126781846068 }, "Cornerstone DE");
+  loadCampusMap("pa-map", { lat: 40.1190346, lng: -75.4250808 }, "Cornerstone PA");
+  loadCampusMap("nj-map", { lat: 40.383, lng: -74.54 }, "Cornerstone NJ");
 }
+
 
 
 
