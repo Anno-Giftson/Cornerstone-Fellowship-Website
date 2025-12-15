@@ -38,38 +38,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Function to load a campus map
   function loadCampusMap(mapId, coords, title) {
-  const mapDiv = document.getElementById(mapId);
-  const container = mapDiv.parentElement;
-  const embedUrl = container.dataset.embed;
+    const mapDiv = document.getElementById(mapId);
+    const container = mapDiv.parentElement;
+    const embedUrl = container.dataset.embed;
 
-  if (window.google && window.google.maps) {
-    try {
-      const map = new google.maps.Map(mapDiv, {
-        center: coords,
-        zoom: 15
-      });
+    if (window.google && window.google.maps) {
+      try {
+        const map = new google.maps.Map(mapDiv, {
+          center: coords,
+          zoom: 15
+        });
 
-      const marker = new google.maps.Marker({
-        position: coords,
-        map: map
-      });
+        const marker = new google.maps.Marker({
+          position: coords,
+          map: map
+        });
 
-      const infoWindow = new google.maps.InfoWindow({
-        content: `<strong>${title}</strong>`
-      });
+        const infoWindow = new google.maps.InfoWindow({
+          content: `<strong>${title}</strong>`
+        });
 
-      // Show white box automatically
-      infoWindow.open(map, marker);
+        // Show white box automatically
+        infoWindow.open(map, marker);
 
-    } catch (e) {
+      } catch (e) {
+        container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
+      }
+    } else {
       container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
     }
-  } else {
-    container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
   }
-}
 
+}); // <-- end of DOMContentLoaded
+
+// Global function for Google Maps
 function initMaps() {
   loadCampusMap(
     "delaware-map",
@@ -90,9 +94,6 @@ function initMaps() {
   );
 }
 
-
-
-});
 
 
 
