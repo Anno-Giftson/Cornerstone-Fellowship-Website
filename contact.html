@@ -12,25 +12,23 @@
 <style>
 /* Contact page adjustments */
 .hero.contact-hero {
-  padding: 2rem 0; /* same as other pages */
+  padding: 2rem 0;
 }
 
 .hero.contact-hero .hero-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left-align like other pages */
+  align-items: flex-start;
 }
 
 .hero.contact-hero .hero-inner p {
-  margin: 0.5rem 0 0 0; /* small spacing for each line */
+  margin: 0.5rem 0 0 0;
 }
 
-/* Add spacing below the heading */
 .hero.contact-hero .hero-title {
   margin-bottom: 3rem;
 }
 
-/* Map container spacing */
 .map-container {
   width: 100%;
   margin: 1rem 0;
@@ -42,7 +40,6 @@
   border: 0;
 }
 
-/* Campus grid layout */
 .campus-grid {
   display: flex;
   flex-wrap: wrap;
@@ -122,7 +119,7 @@
 <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
 </div>
 
-<!-- PA Campus -->
+<!-- Pennsylvania Campus -->
 <div class="campus">
 <h2>Pennsylvania Campus</h2>
 <div class="map-container" data-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.4057081029!2d-75.4250808!3d40.1190346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c702bc1234567%3A0xabcdefabcdefabcd!2s1170%20Rittenhouse%20Rd%2C%20Audubon%2C%20PA%2019403!5e0!3m2!1sen!2sus!4v1695809999999">
@@ -136,7 +133,7 @@
 
 <hr class="campus-divider">
 
-<!-- NJ Campus -->
+<!-- New Jersey Campus -->
 <div class="campus single">
 <h2>New Jersey Campus</h2>
 <div class="map-container" data-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3029.0!2d-74.540000!3d40.383000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3abcd1234567%3A0xabcdefabcdefabcd!2s500%20Plainsboro%20Rd%2C%20Plainsboro%2C%20NJ%2008536!5e0!3m2!1sen!2sus!4v1695800000004">
@@ -158,18 +155,20 @@
 </div>
 </footer>
 
-<!-- Put your actual API key here -->
+<!-- Google Maps API with callback -->
 <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUjyViF7ZFvxMyGaulxJraE05IwvoDcxA&callback=initMaps"
   defer>
 </script>
 
+<!-- Your script.js -->
 <script src="script.js"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
 
