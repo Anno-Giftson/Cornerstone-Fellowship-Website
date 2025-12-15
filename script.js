@@ -70,26 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 }
 
-// Delaware
-loadCampusMap(
-  "delaware-map",
-  { lat: 39.681437979449336, lng: -75.6126781846068 },
-  "Cornerstone DE"
-);
+function initMaps() {
+  loadCampusMap(
+    "delaware-map",
+    { lat: 39.681437979449336, lng: -75.6126781846068 },
+    "Cornerstone DE"
+  );
 
-// Pennsylvania
-loadCampusMap(
-  "pa-map",
-  { lat: 40.1190346, lng: -75.4250808 },
-  "Cornerstone PA"
-);
+  loadCampusMap(
+    "pa-map",
+    { lat: 40.1190346, lng: -75.4250808 },
+    "Cornerstone PA"
+  );
 
-// New Jersey
-loadCampusMap(
-  "nj-map",
-  { lat: 40.383, lng: -74.54 },
-  "Cornerstone NJ"
-);
+  loadCampusMap(
+    "nj-map",
+    { lat: 40.383, lng: -74.54 },
+    "Cornerstone NJ"
+  );
+}
+
 
 
 });
