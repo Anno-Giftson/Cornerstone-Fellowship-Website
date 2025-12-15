@@ -38,39 +38,59 @@ document.addEventListener("DOMContentLoaded", function () {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // --- Maps fallback (embed if API not available or key invalid) ---
-  function loadMap(apiDivId) {
-    const container = document.getElementById(apiDivId).parentElement;
-    const embedUrl = container.dataset.embed;
+  function loadCampusMap(mapId, coords, title) {
+  const mapDiv = document.getElementById(mapId);
+  const container = mapDiv.parentElement;
+  const embedUrl = container.dataset.embed;
 
-    if (window.google && window.google.maps) {
-      try {
-        const map = new google.maps.Map(document.getElementById(apiDivId), {
-          center: { lat: 0, lng: 0 },
-          zoom: 15
-        });
+  if (window.google && window.google.maps) {
+    try {
+      const map = new google.maps.Map(mapDiv, {
+        center: coords,
+        zoom: 15
+      });
 
-        // Check if map rendered; if not, fallback to iframe
-        setTimeout(() => {
-          const mapDiv = document.getElementById(apiDivId);
-          // If no canvas or image rendered inside, assume API failed
-          if (!mapDiv.querySelector("canvas") && !mapDiv.querySelector("img")) {
-            container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-          }
-        }, 1000);
+      const marker = new google.maps.Marker({
+        position: coords,
+        map: map
+      });
 
-      } catch (err) {
-        container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-      }
-    } else {
-      container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+      const infoWindow = new google.maps.InfoWindow({
+        content: `<strong>${title}</strong>`
+      });
+
+      // Show white box automatically
+      infoWindow.open(map, marker);
+
+    } catch (e) {
+      container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
     }
+  } else {
+    container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
   }
+}
 
-  // Load all campus maps
-  loadMap('delaware-map');
-  loadMap('pa-map');
-  loadMap('nj-map');
+// Delaware
+loadCampusMap(
+  "delaware-map",
+  { lat: 39.681437979449336, lng: -75.6126781846068 },
+  "Cornerstone DE"
+);
+
+// Pennsylvania
+loadCampusMap(
+  "pa-map",
+  { lat: 40.1190346, lng: -75.4250808 },
+  "Cornerstone PA"
+);
+
+// New Jersey
+loadCampusMap(
+  "nj-map",
+  { lat: 40.383, lng: -74.54 },
+  "Cornerstone NJ"
+);
+
 
 });
 
