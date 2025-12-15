@@ -1,10 +1,10 @@
+// Hamburger menu and year stuff
 document.addEventListener("DOMContentLoaded", function () {
 
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');
   const links = document.querySelectorAll(".nav-list a");
 
-  // Hamburger menu links
   links.forEach(link => {
     link.addEventListener("click", function(event) {
       event.preventDefault();          
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Restore menu state
   const wasOpen = localStorage.getItem("menuOpen") === "true";
   if (wasOpen) {
     navList.classList.add("show", "no-animate");
@@ -27,53 +26,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 50);
   }
 
-  // Toggle menu
   navToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
     navToggle.classList.toggle('open');
     localStorage.setItem("menuOpen", navList.classList.contains("show"));
   });
 
-  // Current year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Function to load a campus map
-  function loadCampusMap(mapId, coords, title) {
-    const mapDiv = document.getElementById(mapId);
-    const container = mapDiv.parentElement;
-    const embedUrl = container.dataset.embed;
-
-    if (window.google && window.google.maps) {
-      try {
-        const map = new google.maps.Map(mapDiv, {
-          center: coords,
-          zoom: 15
-        });
-
-        const marker = new google.maps.Marker({
-          position: coords,
-          map: map
-        });
-
-        const infoWindow = new google.maps.InfoWindow({
-          content: `<strong>${title}</strong>`
-        });
-
-        // Show white box automatically
-        infoWindow.open(map, marker);
-
-      } catch (e) {
-        container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
-      }
-    } else {
-      container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
-    }
-  }
-
 }); // <-- end of DOMContentLoaded
 
-// Global function for Google Maps
+// --- Make these global for Google Maps ---
+function loadCampusMap(mapId, coords, title) {
+  const mapDiv = document.getElementById(mapId);
+  const container = mapDiv.parentElement;
+  const embedUrl = container.dataset.embed;
+
+  if (window.google && window.google.maps) {
+    try {
+      const map = new google.maps.Map(mapDiv, {
+        center: coords,
+        zoom: 15
+      });
+
+      const marker = new google.maps.Marker({
+        position: coords,
+        map: map
+      });
+
+      const infoWindow = new google.maps.InfoWindow({
+        content: `<strong>${title}</strong>`
+      });
+
+      infoWindow.open(map, marker);
+
+    } catch (e) {
+      container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
+    }
+  } else {
+    container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
+  }
+}
+
 function initMaps() {
   loadCampusMap(
     "delaware-map",
@@ -93,6 +88,7 @@ function initMaps() {
     "Cornerstone NJ"
   );
 }
+
 
 
 
