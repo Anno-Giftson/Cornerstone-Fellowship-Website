@@ -1,11 +1,10 @@
-// --- Navigation & year code remains inside DOMContentLoaded ---
+// --- Navigation & year code inside DOMContentLoaded ---
 document.addEventListener("DOMContentLoaded", function () {
 
   const navToggle = document.querySelector('.nav-toggle');
   const navList = document.querySelector('.nav-list');
   const links = document.querySelectorAll(".nav-list a");
 
-  // Hamburger menu links
   links.forEach(link => {
     link.addEventListener("click", function(event) {
       event.preventDefault();          
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Restore menu state
   const wasOpen = localStorage.getItem("menuOpen") === "true";
   if (wasOpen) {
     navList.classList.add("show", "no-animate");
@@ -28,20 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 50);
   }
 
-  // Toggle menu
   navToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
     navToggle.classList.toggle('open');
     localStorage.setItem("menuOpen", navList.classList.contains("show"));
   });
 
-  // Current year
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
 
-// --- Google Maps functions must be global for API callback ---
+// --- Google Maps must be global for API callback ---
 function loadCampusMap(mapId, coords, title) {
   const mapDiv = document.getElementById(mapId);
   const container = mapDiv.parentElement;
@@ -57,11 +53,13 @@ function loadCampusMap(mapId, coords, title) {
   }
 }
 
+// This must be global (not inside DOMContentLoaded)
 function initMaps() {
   loadCampusMap("delaware-map", { lat: 39.681437979449336, lng: -75.6126781846068 }, "Cornerstone DE");
   loadCampusMap("pa-map", { lat: 40.1190346, lng: -75.4250808 }, "Cornerstone PA");
   loadCampusMap("nj-map", { lat: 40.383, lng: -74.54 }, "Cornerstone NJ");
 }
+
 
 
 
