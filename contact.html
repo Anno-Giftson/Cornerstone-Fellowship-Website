@@ -10,110 +10,120 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <style>
-/* Contact page adjustments */
 .hero.contact-hero { padding: 2rem 0; }
 .hero.contact-hero .hero-inner { display: flex; flex-direction: column; align-items: flex-start; }
 .hero.contact-hero .hero-inner p { margin: 0.5rem 0 0 0; }
 .hero.contact-hero .hero-title { margin-bottom: 3rem; }
+
 .map-container { width: 100%; margin: 1rem 0; }
 .map-container iframe { width: 100%; height: 300px; border: 0; }
-.campus-grid { display: flex; flex-wrap: wrap; gap: 40px; border-bottom: 1px solid rgba(15, 23, 36, 0.1); padding-bottom: 40px; margin-bottom: 40px; }
+
+.campus-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  border-bottom: 1px solid rgba(15, 23, 36, 0.1);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
 .campus { flex: 1; min-width: 300px; }
 .campus h2 { color: var(--accent); font-family: "Montserrat", sans-serif; margin-top: 0; }
-.campus-divider { border: none; border-top: 1px solid rgba(15, 23, 36, 0.1); margin: 40px 0; }
-@media (max-width: 900px) { .campus-grid { flex-direction: column; } }
-</style>
 
+.campus-divider {
+  border: none;
+  border-top: 1px solid rgba(15, 23, 36, 0.1);
+  margin: 40px 0;
+}
+
+@media (max-width: 900px) {
+  .campus-grid { flex-direction: column; }
+}
+</style>
 </head>
-   <body>
+
+<body>
 <header class="site-header">
-<div class="container header-inner">
-<a href="index.html"><img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" /></a>
-<nav class="main-nav">
- <button class="nav-toggle" aria-label="Toggle navigation">
-  <span class="bar"></span><span class="bar"></span><span class="bar"></span>
- </button>
- <ul class="nav-list">
-   <li><a href="index.html">Welcome</a></li>
-   <li><a href="who-we-are.html">Who We Are</a></li>
-   <li><a href="what-we-believe.html">What We Believe</a></li>
-   <li><a href="giving.html">Giving</a></li>
-   <li><a href="videos.html">Videos</a></li>
-   <li><a href="contact.html" class="active">Contact</a></li>
- </ul>
-</nav>
-</div>
+  <div class="container header-inner">
+    <a href="index.html">
+      <img id="site-logo" src="https://s3.amazonaws.com/media.cloversites.com/a4/a4b51d10-ec4e-47fd-bbaf-2e231fb690c3/site-images/d05458fd-5a93-4bd2-bab4-cd6d0c91eb44.png" alt="Cornerstone Fellowship logo" />
+    </a>
+
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="index.html">Welcome</a></li>
+        <li><a href="who-we-are.html">Who We Are</a></li>
+        <li><a href="what-we-believe.html">What We Believe</a></li>
+        <li><a href="giving.html">Giving</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<main id="main" class="site-main">
+<main class="site-main">
 <section class="hero contact-hero">
 <div class="container hero-inner">
 <h1 class="hero-title">Contact Us</h1>
 
 <div class="campus-grid">
 
-<!-- Delaware Campus -->
+<!-- Delaware -->
 <div class="campus">
-<h2>Delaware Campus</h2>
-<div class="map-container" data-embed="https://www.google.com/maps/embed?pb=...">
-  <div id="delaware-map"></div>
-</div>
- 
-<p><strong>Cornerstone DE</strong></p>
-<p>140 Airport Road<br>New Castle, DE 19720</p>
-<p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
-<p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
+  <h2>Delaware Campus</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=140+Airport+Rd+New+Castle+DE&output=embed" loading="lazy"></iframe>
+  </div>
+  <p><strong>Cornerstone DE</strong></p>
+  <p>140 Airport Road<br>New Castle, DE 19720</p>
+  <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+  <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
 </div>
 
-<!-- PA Campus -->
+<!-- Pennsylvania -->
 <div class="campus">
-<h2>Pennsylvania Campus</h2>
-<div class="map-container" data-embed="https://www.google.com/maps/embed?pb=...">
-  <div id="pa-map"></div>
-</div>
- 
-<p><strong>Cornerstone PA</strong></p>
-<p>1170 Rittenhouse Road<br>Audubon, PA 19403</p>
-<p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
-<p>Website: <a href="https://cornerstonepa.org" target="_blank">cornerstonepa.org</a></p>
+  <h2>Pennsylvania Campus</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=1170+Rittenhouse+Rd+Audubon+PA&output=embed" loading="lazy"></iframe>
+  </div>
+  <p><strong>Cornerstone PA</strong></p>
+  <p>1170 Rittenhouse Road<br>Audubon, PA 19403</p>
+  <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+  <p>Website: <a href="https://cornerstonepa.org" target="_blank">cornerstonepa.org</a></p>
 </div>
 
 <hr class="campus-divider">
 
-<!-- NJ Campus -->
-<div class="campus single">
-<h2>New Jersey Campus</h2>
-<div class="map-container" data-embed="https://www.google.com/maps/embed?pb=...">
-  <div id="nj-map"></div>
-</div>
- 
-<p><strong>Cornerstone NJ</strong></p>
-<p>500 Plainsboro Road<br>Plainsboro, NJ 08536</p>
-<p>Ph: <a href="tel:+16099025981">(609) 902-5981</a></p>
-<p>Website: <a href="https://www.csfnj.com" target="_blank">www.csfnj.com</a></p>
+<!-- New Jersey -->
+<div class="campus">
+  <h2>New Jersey Campus</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=500+Plainsboro+Rd+Plainsboro+NJ&output=embed" loading="lazy"></iframe>
+  </div>
+  <p><strong>Cornerstone NJ</strong></p>
+  <p>500 Plainsboro Road<br>Plainsboro, NJ 08536</p>
+  <p>Ph: <a href="tel:+16099025981">(609) 902-5981</a></p>
+  <p>Website: <a href="https://www.csfnj.com" target="_blank">www.csfnj.com</a></p>
 </div>
 
+</div>
 </div>
 </section>
 </main>
 
 <footer class="site-footer">
-<div class="container">
-<p>&copy; <span id="year"></span> Cornerstone Delaware</p>
-</div>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Cornerstone Delaware</p>
+  </div>
 </footer>
 
-
-<!-- Load script.js first -->
 <script src="script.js"></script>
-
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
-
-
-
-
-
