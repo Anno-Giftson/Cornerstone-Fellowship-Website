@@ -1,4 +1,3 @@
-// --- Navigation & year code inside DOMContentLoaded ---
 document.addEventListener("DOMContentLoaded", function () {
 
   const navToggle = document.querySelector('.nav-toggle');
@@ -7,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   links.forEach(link => {
     link.addEventListener("click", function(event) {
-      event.preventDefault();          
-      navList.classList.remove("show");  
+      event.preventDefault();
+      navList.classList.remove("show");
       localStorage.setItem("menuOpen", false);
 
       const href = this.getAttribute("href");
@@ -37,28 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// --- Google Maps must be global for API callback ---
-function loadCampusMap(mapId, coords, title) {
-  const mapDiv = document.getElementById(mapId);
-  const container = mapDiv.parentElement;
-  const embedUrl = container.dataset.embed;
-
-  if (window.google && window.google.maps) {
-    const map = new google.maps.Map(mapDiv, { center: coords, zoom: 15 });
-    const marker = new google.maps.Marker({ position: coords, map: map });
-    const infoWindow = new google.maps.InfoWindow({ content: `<strong>${title}</strong>` });
-    infoWindow.open(map, marker);
-  } else {
-    container.innerHTML = `<iframe src="${embedUrl}" allowfullscreen loading="lazy"></iframe>`;
-  }
-}
-
-// This must be global (not inside DOMContentLoaded)
-function initMaps() {
-  loadCampusMap("delaware-map", { lat: 39.681437979449336, lng: -75.6126781846068 }, "Cornerstone DE");
-  loadCampusMap("pa-map", { lat: 40.1190346, lng: -75.4250808 }, "Cornerstone PA");
-  loadCampusMap("nj-map", { lat: 40.383, lng: -74.54 }, "Cornerstone NJ");
-}
 
 
 
