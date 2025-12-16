@@ -39,6 +39,37 @@
 @media (max-width: 900px) {
   .campus-grid { flex-direction: column; }
 }
+
+.campus-main {
+  width: 100%;
+}
+
+.map-large iframe {
+  height: 400px;
+}
+
+.campus-row {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+}
+
+.map-small iframe {
+  height: 250px;
+}
+
+/* Mobile: same size, stacked */
+@media (max-width: 900px) {
+  .campus-row {
+    flex-direction: column;
+  }
+
+  .map-large iframe,
+  .map-small iframe {
+    height: 300px;
+  }
+}
+
 </style>
 </head>
 
@@ -72,46 +103,64 @@
 
 <div class="campus-grid">
 
-<!-- Delaware -->
-<div class="campus">
-  <h2>Delaware Campus</h2>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps?q=140+Airport+Rd+New+Castle+DE&output=embed" loading="lazy"></iframe>
+  <!-- Delaware (BIG / Primary) -->
+  <div class="campus campus-main">
+    <h2>Delaware Campus</h2>
+    <div class="map-container map-large">
+      <iframe
+        src="https://www.google.com/maps?q=140+Airport+Rd+New+Castle+DE&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+    <p><strong>Cornerstone DE</strong></p>
+    <p>140 Airport Road<br>New Castle, DE 19720</p>
+    <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+    <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
   </div>
-  <p><strong>Cornerstone DE</strong></p>
-  <p>140 Airport Road<br>New Castle, DE 19720</p>
-  <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
-  <p>Email: <a href="mailto:cornerstone.delaware@gmail.com">cornerstone.delaware@gmail.com</a></p>
-</div>
 
-<!-- Pennsylvania -->
-<div class="campus">
-  <h2>Pennsylvania Campus</h2>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps?q=1170+Rittenhouse+Rd+Audubon+PA&output=embed" loading="lazy"></iframe>
+  <!-- PA + NJ -->
+  <div class="campus-row">
+
+    <!-- PA -->
+    <div class="campus">
+      <h2>Pennsylvania Campus</h2>
+      <div class="map-container map-small">
+        <iframe
+          src="https://www.google.com/maps?q=1170+Rittenhouse+Rd+Audubon+PA&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p><strong>Cornerstone PA</strong></p>
+      <p>1170 Rittenhouse Road<br>Audubon, PA 19403</p>
+      <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
+      <p>
+        Website:
+        <a href="https://cornerstonepa.org" target="_blank">cornerstonepa.org</a>
+      </p>
+    </div>
+
+    <!-- NJ -->
+    <div class="campus">
+      <h2>New Jersey Campus</h2>
+      <div class="map-container map-small">
+        <iframe
+          src="https://www.google.com/maps?q=500+Plainsboro+Rd+Plainsboro+NJ&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p><strong>Cornerstone NJ</strong></p>
+      <p>500 Plainsboro Road<br>Plainsboro, NJ 08536</p>
+      <p>Ph: <a href="tel:+16099025981">(609) 902-5981</a></p>
+      <p>
+        Website:
+        <a href="https://www.csfnj.com" target="_blank">www.csfnj.com</a>
+      </p>
+    </div>
+
   </div>
-  <p><strong>Cornerstone PA</strong></p>
-  <p>1170 Rittenhouse Road<br>Audubon, PA 19403</p>
-  <p>Ph: <a href="tel:+14847446219">(484) 744-6219</a></p>
-  <p>Website: <a href="https://cornerstonepa.org" target="_blank">cornerstonepa.org</a></p>
-</div>
-
-<hr class="campus-divider">
-
-<!-- New Jersey -->
-<div class="campus">
-  <h2>New Jersey Campus</h2>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps?q=500+Plainsboro+Rd+Plainsboro+NJ&output=embed" loading="lazy"></iframe>
-  </div>
-  <p><strong>Cornerstone NJ</strong></p>
-  <p>500 Plainsboro Road<br>Plainsboro, NJ 08536</p>
-  <p>Ph: <a href="tel:+16099025981">(609) 902-5981</a></p>
-  <p>Website: <a href="https://www.csfnj.com" target="_blank">www.csfnj.com</a></p>
-</div>
 
 </div>
-</div>
+
 </section>
 </main>
 
